@@ -1,0 +1,30 @@
+.userAuth {
+    display: flex;
+    align-items: center;
+    background-color: rgb(138, 168, 233);
+    border-radius: 10px;
+    height: 70px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: solid rgba(0, 0, 0, 0.1) 2px;
+  }
+  
+.authButton {
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    white-space: nowrap;
+    transition: 0.2s;
+    height: 100%;
+    font-family: Roboto;
+    font-weight: 300;
+}
+  
+.authButton:hover {
+    color: rgb(209, 209, 209);
+}
