@@ -3,10 +3,10 @@
 .card {
     border: 1px solid #ccc;
     border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    transition: max-height 0.9s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     cursor: pointer;
     background-color: #e9ecef;
     font-family: Roboto;
@@ -20,59 +20,94 @@
 
 .header {
     user-select: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 h2 {
     color: #333;
+    margin-top: 0;
 }
 
 .footer {
     display: flex;
-    flex-direction: column;  /* Stacks items vertically */
-    align-items: flex-start;  /* Aligns items to the left */
-    width: 100%;
-    margin-top: 20px;
+    flex-direction: column;
 }
 
 .targetInfo {
     display: flex;
-    justify-content: space-between;  /* Ensures spacing between progress bar and target text */
+    justify-content: space-between;
     align-items: center;
-    width: 100%;  /* Full width to maximize space usage */
-    margin-bottom: 10px;  /* Space between this section and the button */
 }
 
 .progressBar {
-    width: 90%;  /* Example width, adjust as necessary */
-    height: 20px;
-    background-color: #ddd;
+    width: 90%;
+    background-color: #ccc;
     border-radius: 10px;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .progress {
     height: 100%;
-    background-color: #69db7c;
-    transition: width 0.3s ease-in-out;
     color: white;
+    border: 4px solid #ccc;
+    border-radius: 10px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-size: 16px;
-    font-weight: bold;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 button {
     padding: 10px 20px;
     border: none;
     border-radius: 10px;
-    background-color: #a5d8ff;
+    background-color: #4dabf7;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    align-self: flex-start;  /* Ensures the button starts from the left */
+    align-self: flex-start;
 }
 
 button:hover {
-    background-color: #4dabf7;
+    background-color: #228be6;
+}
+
+.targetAmount {
+    font-size: 1.5em;
+    color: #34495e;
+    text-align: center;  /* Keeps the text centrally aligned */
+    width: 10%;
+}
+
+.content {
+    width: 60%;
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50;
+    line-height: 2;
+}
+
+.low {
+    background-color: #f08c00;
+}
+
+.low:hover {
+    background-color: #e8590c;
+}
+
+.med {
+    background-color: #ffd43b;
+}
+
+.med:hover {
+    background-color: #fab005;
+}
+
+.high {
+    background-color: #69db7c;
+}
+
+.high:hover {
+    background-color: #40c057;
 }
