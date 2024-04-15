@@ -1,7 +1,7 @@
 .logo {
     color: rgb(145, 0, 0);
-    margin: 0px 1rem;
-    width: 120px;
+    margin: 0 1em;
+    width: 8em;
     font-family: 'Brush Script MT';
-    font-size: large;
+    text-align: center;
 }
