@@ -24,16 +24,18 @@ function SortByButton() {
             {isOpen && (
                 <ul className={styles.optionsList}>
                     {sortOptions.map((option) => (
-                    <li key={option} 
-                        className={styles.optionItem} 
-                        onClick={() => handleSelectedOption(option)}>
-                        {option}
-                    </li>
+                        <li
+                            key={option}
+                            className={styles.optionItem}
+                            onClick={() => handleSelectedOption(option)}
+                        >
+                            {option}
+                        </li>
                     ))}
                 </ul>
             )}
         </div>
     );
-};
+}
 
 export default SortByButton;
