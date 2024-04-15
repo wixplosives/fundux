@@ -1,3 +1,13 @@
 :root {
-  background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0, 0, 0, 0.02) 1px, rgba(0, 0, 0, 0.02) 2px);
+   background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 0, 0, 0.02) 1px,
+      rgba(0, 0, 0, 0.02) 2px
+   );
+}
+
+* {
+   padding: 0;
 }
