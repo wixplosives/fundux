@@ -1,30 +1,26 @@
 .userAuth {
    display: flex;
-   align-items: center;
    background-color: #4dabf7;
-   border-radius: 10px;
-   height: 70px;
-   box-sizing: border-box;
+   border-radius: 0.7em;
+   height: 4em;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   border: solid rgba(0, 0, 0, 0.1) 2px;
+   margin-right: 1em;
 }
 
 .authButton {
+   font-size: 1rem;
    background: transparent;
    border: none;
-   border-radius: 10px;
-   font-size: 16px;
    cursor: pointer;
    display: flex;
    align-items: center;
-   padding: 16px;
-   white-space: nowrap;
    transition: 0.2s;
-   height: 100%;
    font-family: Roboto;
    font-weight: 300;
+   white-space: nowrap;
+   margin: 0 1em;
 }
 
 .authButton:hover {
-   color: rgb(209, 209, 209);
+   color: #a5d8ff;
 }
