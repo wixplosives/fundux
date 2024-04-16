@@ -1,11 +1,11 @@
-.userAuth {
+.logIn {
    display: flex;
    gap: 0.5em;
    height: 4em;
    margin-right: 1em;
 }
 
-.authButton {
+.logInButton {
    width: 6em;
    font-size: 1rem;
    font-family: Roboto;
@@ -19,7 +19,7 @@
    cursor: pointer;
 }
 
-.authButton:hover {
+.logInButton:hover {
    background-color: #4dabf7;
    color: white;
 }
