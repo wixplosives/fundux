@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 .heroSection {
-  margin: 2%;
+   margin: 2%;
 }
 
 .heroSection h1 {
-  font-size: 5rem;
-  font-family: 'Courier New';
+   font-size: 5rem;
+   font-family: 'Courier New';
 }
 
 .heroSection h2 {
-  font-size: 3rem;
-  font-family: Quicksand;
-  color: #1971c2;
+   font-size: 3rem;
+   font-family: Quicksand;
+   color: #1971c2;
 }
