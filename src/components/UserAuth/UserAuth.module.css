@@ -1,24 +1,25 @@
 .userAuth {
    display: flex;
-   background-color: #4dabf7;
-   border-radius: 0.7em;
    height: 4em;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
    margin-right: 1em;
 }
 
 .authButton {
    font-size: 1rem;
-   background: transparent;
+   background-color: #a5d8ff;
    border: none;
    cursor: pointer;
-   transition: 0.2s;
+   transition: 0.2s ease-in-out;
    font-family: Roboto;
    font-weight: 300;
    white-space: nowrap;
-   margin: 0 1em;
+   margin-right: 1em;
+   width: 6em;
+   border-radius: 0.7em;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .authButton:hover {
-   color: #a5d8ff;
+   background-color: #4dabf7;
+   color: white;
 }
