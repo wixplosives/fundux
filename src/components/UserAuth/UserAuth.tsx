@@ -3,7 +3,7 @@ import styles from './UserAuth.module.css';
 function UserAuth() {
    return (
       <div className={styles.userAuth}>
-         <button style={{ marginRight: '0.5em' }} className={styles.authButton}>
+         <button className={`${styles.authButton} ${styles.first}`}>
             Log In
          </button>
          <button className={styles.authButton}>Sign Up</button>

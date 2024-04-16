@@ -23,3 +23,7 @@
    background-color: #4dabf7;
    color: white;
 }
+
+.authButton.first {
+   margin-right: 0.5em;
+}
