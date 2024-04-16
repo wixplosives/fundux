@@ -1,11 +1,10 @@
 .logIn {
-   display: flex;
-   height: 4em;
    margin-right: 1em;
 }
 
 .logInButton {
    width: 6em;
+   height: 4em;
    font-size: 1rem;
    font-family: Roboto;
    font-weight: 300;
