@@ -1,12 +1,12 @@
 .userAuth {
    display: flex;
+   gap: 0.5em;
    height: 4em;
    margin-right: 1em;
 }
 
 .authButton {
    width: 6em;
-   margin-right: 1em;
    font-size: 1rem;
    font-family: Roboto;
    font-weight: 300;
@@ -22,8 +22,4 @@
 .authButton:hover {
    background-color: #4dabf7;
    color: white;
-}
-
-.authButton.first {
-   margin-right: 0.5em;
 }
