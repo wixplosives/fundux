@@ -2,13 +2,12 @@
    width: 25%;
    height: 4em;
    font-weight: 300;
-   margin-right: 1em;
 }
 
 .button {
    font-size: 1rem;
    background-color: white;
-   border: 0.1em solid black;
+   border: 1px solid black;
    border-radius: 0.7em;
    cursor: pointer;
    width: 100%;
@@ -23,9 +22,8 @@
 }
 
 .optionsList {
-   list-style: none;
    background-color: white;
-   border: 0.1em solid #ccc;
+   border: 1px solid #ccc;
    border-bottom-left-radius: 0.7em;
    border-bottom-right-radius: 0.7em;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
