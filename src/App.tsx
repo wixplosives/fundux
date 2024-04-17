@@ -1,12 +1,13 @@
 import Header from './components/Header';
-import SortByButton from './components/SortByButton';
 import HeroSection from './components/HeroSection';
+import OptionButtons from './components/OptionButtons';
 
 function App() {
    return (
       <div>
          <Header />
          <HeroSection />
+         <OptionButtons />
       </div>
    );
 }
