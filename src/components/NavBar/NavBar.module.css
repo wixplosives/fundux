@@ -1,0 +1,28 @@
+.navBar {
+   display: flex;
+   align-items: center;
+   background-color: #e9ecef;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   width: 100%;
+   border-radius: 0.7em;
+   margin-right: 1em;
+   height: 4em;
+}
+
+.navList {
+   display: flex;
+   align-items: center;
+   list-style-type: none;
+}
+
+.navItem {
+   margin: 0 1em;
+   cursor: pointer;
+   transition: color 0.2s;
+   font-family: Roboto;
+   font-weight: 300;
+}
+
+.navItem:hover {
+   color: #868e96;
+}
