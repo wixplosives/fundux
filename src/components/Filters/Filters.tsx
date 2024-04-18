@@ -25,9 +25,7 @@ function Filters() {
          <button
             className={`${styles.button} ${isOpen ? styles.open : null}`}
             onClick={toggleIsOpen}>
-            Filters:{' '}
-            {selectedFilters.length > 0 ? selectedFilters.join(', ') : null}
-            {isOpen ? '▲' : '▼'}
+            Filters: {selectedFilters.join(', ')} {isOpen ? '▲' : '▼'}
          </button>
          {isOpen && (
             <ul className={styles.optionsList}>
