@@ -18,7 +18,7 @@ function ModalLogIn({ onCloseModal }: ModalLogInProps) {
             <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
                <div className={styles.modalHeaderContent}>
                   <h2>Login to Your Account</h2>
-                  <p>&times;</p>
+                  <button className={styles.xButton}>&times;</button>
                </div>
             </header>
             <section className={styles.sectionContent}>
@@ -42,7 +42,8 @@ function ModalLogIn({ onCloseModal }: ModalLogInProps) {
                </div>
                <button
                   type="submit"
-                  className={`${styles.submitButton} ${styles.login}`}>
+                  className={`${styles.submitButton} ${styles.login}`}
+                  onClick={(e) => e.preventDefault()}>
                   Log In
                </button>
             </section>
@@ -50,7 +51,8 @@ function ModalLogIn({ onCloseModal }: ModalLogInProps) {
                <div className={styles.modalFooterContent}>
                   <button
                      type="submit"
-                     className={`${styles.submitButton} ${styles.cancel}`}>
+                     className={`${styles.submitButton} ${styles.cancel}`}
+                     onClick={(e) => e.preventDefault()}>
                      Cancel
                   </button>
                   <p className={styles.signUp}>
