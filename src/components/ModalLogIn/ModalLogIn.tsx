@@ -1,8 +1,19 @@
+import React from 'react';
 import styles from './ModalLogIn.module.css';
 
-function ModalLogIn() {
+interface ModalLogInProps {
+   onCloseModal: () => void;
+}
+
+function ModalLogIn({ onCloseModal }: ModalLogInProps) {
+   const handleBackgroundClick = (event: React.MouseEvent<HTMLDivElement>) => {
+      if (event.target === event.currentTarget) {
+         onCloseModal();
+      }
+   };
+
    return (
-      <div className={styles.modalLogIn}>
+      <div className={styles.modalLogIn} onClick={handleBackgroundClick}>
          <form className={styles.modalContent}>
             <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
                <div className={styles.modalHeaderContent}>
