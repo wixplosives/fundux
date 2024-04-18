@@ -1,7 +1,11 @@
 import React from 'react';
 import styles from './OptionButtons.module.css';
 
-function OptionButtons({ children }: { children: React.ReactNode }) {
+interface OptionButtonsProps {
+   children: React.ReactNode;
+}
+
+function OptionButtons({ children }: OptionButtonsProps) {
    return <div className={styles.optionButtons}>{children}</div>;
 }
 

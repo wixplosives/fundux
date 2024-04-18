@@ -1,7 +1,6 @@
 .sortByButton {
    width: 25%;
    height: 4em;
-   font-weight: 300;
 }
 
 .button {
@@ -32,6 +31,7 @@
 
 .optionItem {
    font-family: Roboto;
+   font-weight: 300;
    height: 3em;
    cursor: pointer;
    transition: background-color 0.2s;

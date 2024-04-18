@@ -21,7 +21,7 @@ function SortByButton() {
          <button
             className={`${styles.button} ${isOpen ? styles.open : null}`}
             onClick={toggleIsOpen}>
-            Sort By: {selectedOption} <span>{isOpen ? '▲' : '▼'}</span>
+            Sort By: {selectedOption} {isOpen ? '▲' : '▼'}
          </button>
          {isOpen && (
             <ul className={styles.optionsList}>
