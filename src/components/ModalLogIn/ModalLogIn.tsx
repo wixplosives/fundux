@@ -1,5 +1,7 @@
+import styles from './ModalLogIn.module.css';
+
 function ModalLogIn() {
-   return <div></div>;
+   return <div className={styles.modalLogIn}></div>;
 }
 
 export default ModalLogIn;
