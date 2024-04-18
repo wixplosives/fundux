@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import styles from './SortByButton.module.css';
+import styles from '../../common/commonOptionButton.module.css';
+import sortByButtonStyles from './SortByButton.module.css';
 
 const sortOptions: string[] = ['Newest', 'Oldest', 'A-Z', 'Z-A'];
 
@@ -17,7 +18,7 @@ function SortByButton() {
    };
 
    return (
-      <div className={styles.sortByButton}>
+      <div className={sortByButtonStyles.sortByButton}>
          <button
             className={`${styles.button} ${isOpen ? styles.open : null}`}
             onClick={toggleIsOpen}>
