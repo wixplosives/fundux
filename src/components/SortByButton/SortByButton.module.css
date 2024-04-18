@@ -6,7 +6,6 @@
 .button {
    font-size: 1rem;
    background-color: white;
-   color: black;
    border: 1px solid black;
    border-radius: 0.7em;
    cursor: pointer;
