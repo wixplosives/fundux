@@ -143,6 +143,6 @@ button.submitButton:hover {
    transition: background-color 0.2s ease-in-out;
 }
 
-xButton:hover {
+.xButton:hover {
    background-color: #0e0e0e;
 }
