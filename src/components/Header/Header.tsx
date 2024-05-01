@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 import Logo from '../Logo';
 import NavBar from '../NavBar';
 import LogIn from '../LogIn';
-import ModalLogIn from '../ModalLogIn';
+import ModalLogIn from '../LogInModal';
 
 function Header() {
    const [isModalVisible, setModalVisible] = useState(false);

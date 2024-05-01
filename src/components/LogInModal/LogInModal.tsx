@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ModalLogIn.module.css';
+import styles from './LogInModal.module.css';
 
 interface ModalLogInProps {
    onCloseModal: () => void;
