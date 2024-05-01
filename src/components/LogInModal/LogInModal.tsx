@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './LogInModal.module.css';
 
-interface ModalLogInProps {
+interface LogInModalProps {
    onCloseModal: () => void;
 }
 
-function ModalLogIn({ onCloseModal }: ModalLogInProps) {
+function LogInModal({ onCloseModal }: LogInModalProps) {
    const handleBackgroundClick = (event: React.MouseEvent<HTMLDivElement>) => {
       if (event.target === event.currentTarget) {
          onCloseModal();
@@ -65,4 +65,4 @@ function ModalLogIn({ onCloseModal }: ModalLogInProps) {
    );
 }
 
-export default ModalLogIn;
+export default LogInModal;
