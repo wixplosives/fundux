@@ -4,6 +4,7 @@ import Logo from '../Logo';
 import NavBar from '../NavBar';
 import LogIn from '../LogIn';
 import ModalLogIn from '../LogInModal';
+import AuthModals from '../AuthModals';
 
 function Header() {
    const [isModalVisible, setModalVisible] = useState(false);
@@ -21,7 +22,7 @@ function Header() {
          <Logo />
          <NavBar />
          <LogIn onLoginClick={handleLoginClick} />
-         {isModalVisible && <ModalLogIn onCloseModal={closeModal} />}
+         {isModalVisible && <AuthModals onCloseModal={closeModal} />}
       </header>
    );
 }

@@ -1,19 +1,28 @@
 import styles from '../../common/commonAuthModals.module.css';
 
-interface LogInModalProps {
+interface SignUpModalProps {
    switchMode: () => void;
 }
 
-function LogInModal({ switchMode }: LogInModalProps) {
+function SignUpModal({ switchMode }: SignUpModalProps) {
    return (
       <form className={styles.modalContent}>
          <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
             <div className={styles.modalHeaderContent}>
-               <h2>Login to Your Account</h2>
+               <h2>Sign up</h2>
                <button className={styles.xButton}>&times;</button>
             </div>
          </header>
          <section className={styles.sectionContent}>
+            <div className={styles.formGroup}>
+               <label htmlFor="email">Email</label>
+               <input
+                  id="email"
+                  type="email"
+                  placeholder="Enter your email"
+                  aria-required="true"
+               />
+            </div>
             <div className={styles.formGroup}>
                <label htmlFor="username">Username</label>
                <input
@@ -32,11 +41,20 @@ function LogInModal({ switchMode }: LogInModalProps) {
                   aria-required="true"
                />
             </div>
+            <div className={styles.formGroup}>
+               <label htmlFor="confirm-password">Confirm Password</label>
+               <input
+                  id="confirm-password"
+                  type="password"
+                  placeholder="Confirm your password"
+                  aria-required="true"
+               />
+            </div>
             <button
                type="submit"
-               className={`${styles.submitButton}`}
+               className={`${styles.submitButton} ${styles.login}`}
                onClick={(e) => e.preventDefault()}>
-               Log In
+               Sign Up
             </button>
          </section>
          <footer className={`${styles.modalBoundary} ${styles.modalFooter}`}>
@@ -48,9 +66,9 @@ function LogInModal({ switchMode }: LogInModalProps) {
                   Cancel
                </button>
                <p className={styles.signUp}>
-                  Don't have an account?{' '}
+                  Already have an account?{' '}
                   <button onClick={switchMode} className={styles.linkButton}>
-                     Sign up
+                     Log in
                   </button>
                </p>
             </div>
@@ -59,4 +77,4 @@ function LogInModal({ switchMode }: LogInModalProps) {
    );
 }
 
-export default LogInModal;
+export default SignUpModal;
