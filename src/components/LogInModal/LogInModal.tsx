@@ -13,7 +13,7 @@ function LogInModal({ onCloseModal }: LogInModalProps) {
    };
 
    return (
-      <div className={styles.modalLogIn} onClick={handleBackgroundClick}>
+      <div className={styles.modal} onClick={handleBackgroundClick}>
          <form className={styles.modalContent}>
             <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
                <div className={styles.modalHeaderContent}>
@@ -23,7 +23,7 @@ function LogInModal({ onCloseModal }: LogInModalProps) {
             </header>
             <section className={styles.sectionContent}>
                <div className={styles.formGroup}>
-                  <label htmlFor="username">Username:</label>
+                  <label htmlFor="username">Username</label>
                   <input
                      id="username"
                      type="text"
@@ -32,7 +32,7 @@ function LogInModal({ onCloseModal }: LogInModalProps) {
                   />
                </div>
                <div className={styles.formGroup}>
-                  <label htmlFor="password">Password:</label>
+                  <label htmlFor="password">Password</label>
                   <input
                      id="password"
                      type="password"
@@ -42,7 +42,7 @@ function LogInModal({ onCloseModal }: LogInModalProps) {
                </div>
                <button
                   type="submit"
-                  className={`${styles.submitButton} ${styles.login}`}
+                  className={`${styles.submitButton}`}
                   onClick={(e) => e.preventDefault()}>
                   Log In
                </button>
@@ -56,7 +56,12 @@ function LogInModal({ onCloseModal }: LogInModalProps) {
                      Cancel
                   </button>
                   <p className={styles.signUp}>
-                     Don't have an account? <a href="#">Sign up</a>
+                     Don't have an account?{' '}
+                     <button
+                        onClick={(e) => e.preventDefault()}
+                        className={styles.linkButton}>
+                        Sign up
+                     </button>
                   </p>
                </div>
             </footer>

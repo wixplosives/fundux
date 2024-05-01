@@ -1,4 +1,4 @@
-.modalLogIn {
+.modal {
    position: fixed;
    top: 0;
    left: 0;
@@ -9,9 +9,6 @@
    justify-content: center;
    align-items: center;
    font-family: Roboto, sans-serif;
-}
-
-.modalLogIn {
    animation: fadeIn 0.3s;
 }
 
@@ -33,6 +30,16 @@
    flex-direction: column;
    gap: 2em;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
+   }
 }
 
 .modalBoundary {
@@ -62,12 +69,6 @@
    align-items: center;
 }
 
-.modalContentHeader > p {
-   cursor: pointer;
-   font-size: 2rem;
-   color: #333;
-}
-
 .sectionContent {
    display: flex;
    flex-direction: column;
@@ -78,32 +79,30 @@
 .formGroup {
    width: 80%;
    display: flex;
-   align-items: center;
-   gap: 1em;
+   flex-direction: column;
+   gap: 0.4em;
 }
 
 .formGroup > input {
-   width: 100%;
-   height: 2em;
+   height: 2.5em;
    border: 1px solid #ccc;
    border-radius: 0.3em;
-   display: flex;
-   align-items: center;
+   padding-left: 0.25em;
 }
 
 .submitButton {
    background-color: #1971c2;
    height: 3em;
+   width: 80%;
    color: white;
    border: none;
    border-radius: 0.7em;
    cursor: pointer;
-   align-self: center;
    transition: background-color 0.2s ease-in-out;
 }
 
-.submitButton.login {
-   width: 80%;
+.submitButton:hover {
+   background-color: #0056b3;
 }
 
 .submitButton.cancel {
@@ -114,22 +113,8 @@
    align-items: center;
 }
 
-button.submitButton:hover {
-   background-color: #0056b3;
-}
-
 .submitButton.cancel:hover {
    background-color: #c62828;
-}
-
-.signUp > a {
-   color: #0056b3;
-   text-decoration: none;
-   transition: color 0.2s ease-in-out;
-}
-
-.signUp > a:hover {
-   color: #007bff;
 }
 
 .xButton {
@@ -145,4 +130,17 @@ button.submitButton:hover {
 
 .xButton:hover {
    background-color: #0e0e0e;
+}
+
+.linkButton {
+   background: none;
+   color: #0056b3;
+   border: none;
+   font: inherit;
+   cursor: pointer;
+   transition: color 0.2s ease-in-out;
+}
+
+.linkButton:hover {
+   color: #007bff;
 }
