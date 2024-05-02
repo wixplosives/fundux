@@ -1,0 +1,14 @@
+[
+   {
+      "id": 1,
+      "name": "Alice Johnson",
+      "avatarUrl": "/images/alice.jpg",
+      "isLoggedIn": false
+   },
+   {
+      "id": 2,
+      "name": "Bob Smith",
+      "avatarUrl": "/images/bob.jpg",
+      "isLoggedIn": false
+   }
+]
