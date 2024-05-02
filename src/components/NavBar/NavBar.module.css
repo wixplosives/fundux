@@ -21,6 +21,8 @@
    transition: color 0.2s;
    font-family: Roboto;
    font-weight: 300;
+   color: black;
+   text-decoration: none;
 }
 
 .navItem:hover {
