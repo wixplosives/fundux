@@ -1,16 +1,4 @@
 .header {
    display: flex;
    align-items: center;
-   width: 100%;
-}
-
-.header h1 {
-   margin: 0;
-}
-
-.headerNew {
-   display: flex;
-   align-items: flex-start;
-   max-height: 4em;
-   margin-top: 1em;
 }

@@ -6,12 +6,10 @@ import Avatar from '../Avatar';
 
 function Header() {
    return (
-      <header className={styles.headerNew}>
-         <div className={styles.header}>
-            <Logo />
-            <NavBar />
-            {/* <LogIn /> */}
-         </div>
+      <header className={styles.header}>
+         <Logo />
+         <NavBar />
+         {/* <LogIn /> */}
          <Avatar />
       </header>
    );
