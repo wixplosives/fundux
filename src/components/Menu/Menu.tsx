@@ -9,8 +9,8 @@ interface MenuProps {
 function Menu({ anchorRect, onClose }: MenuProps) {
    if (!anchorRect) return null;
 
-   const top = anchorRect.bottom + 10 + window.scrollY;
-   const right = window.innerWidth - anchorRect.right - window.scrollX;
+   const top = anchorRect.bottom + 10;
+   const right = window.innerWidth - anchorRect.right;
    const handleOnClose = (event: React.MouseEvent<HTMLDivElement>) => {
       if (event.target === event.currentTarget) {
          onClose();
@@ -18,7 +18,8 @@ function Menu({ anchorRect, onClose }: MenuProps) {
    };
 
    return ReactDOM.createPortal(
-      <div className={styles.menuModal} onClick={handleOnClose}>
+      <>
+         <div className={styles.menuModal} onClick={handleOnClose}></div>
          <div
             className={styles.menu}
             style={{
@@ -37,7 +38,7 @@ function Menu({ anchorRect, onClose }: MenuProps) {
                </li>
             </ul>
          </div>
-      </div>,
+      </>,
       document.getElementById('menu-root') as HTMLElement
    );
 }
