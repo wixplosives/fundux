@@ -5,7 +5,7 @@
    font-family: Roboto;
    width: 12em;
    height: 12em;
-   z-index: 1;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu h4 {
@@ -34,6 +34,25 @@
    display: flex;
    align-items: center;
    font-weight: 300;
-   padding-left: 0.5em;
+   padding-left: 1em;
    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+   transition: background-color 0.2s;
+}
+
+.menuItem:hover {
+   background-color: #f0f0f0;
+   cursor: pointer;
+}
+
+.menuLowerBoundry {
+   border-radius: 0 0 0.7em 0.7em;
+}
+
+.menuModal {
+   position: fixed;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   background-color: rgba(0, 0, 0, 0.2);
 }
