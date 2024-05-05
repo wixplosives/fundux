@@ -2,7 +2,11 @@ import { useState, useRef } from 'react';
 import styles from './Avatar.module.css';
 import Menu from '../Menu';
 
-function Avatar() {
+interface AvatarProps {
+   onLogOut: () => void;
+}
+
+function Avatar({ onLogOut }: AvatarProps) {
    const [isOpen, setIsOpen] = useState(false);
    const anchorRef = useRef<HTMLButtonElement>(null);
 
@@ -26,7 +30,13 @@ function Avatar() {
             onClick={handleOnClick}>
             JD
          </button>
-         {isOpen && <Menu onClose={handleOnClose} anchorRect={anchorRect} />}
+         {isOpen && (
+            <Menu
+               onClose={handleOnClose}
+               onLogOut={onLogOut}
+               anchorRect={anchorRect}
+            />
+         )}
       </div>
    );
 }

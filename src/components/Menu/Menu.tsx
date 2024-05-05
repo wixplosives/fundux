@@ -4,9 +4,10 @@ import styles from './Menu.module.css';
 interface MenuProps {
    anchorRect: DOMRect | null;
    onClose: () => void;
+   onLogOut: () => void;
 }
 
-function Menu({ anchorRect, onClose }: MenuProps) {
+function Menu({ anchorRect, onClose, onLogOut }: MenuProps) {
    if (!anchorRect) return null;
 
    const top = anchorRect.bottom + 10;
@@ -33,7 +34,7 @@ function Menu({ anchorRect, onClose }: MenuProps) {
                <li className={styles.menuItem}>Settings</li>
                <li
                   className={`${styles.menuItem} ${styles.menuLowerBoundry}`}
-                  onClick={onClose}>
+                  onClick={onLogOut}>
                   Log out
                </li>
             </ul>
