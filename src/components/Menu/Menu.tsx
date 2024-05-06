@@ -1,13 +1,15 @@
 import ReactDOM from 'react-dom';
 import styles from './Menu.module.css';
+import { User } from '../../utils';
 
 interface MenuProps {
-   anchorRect: DOMRect | null;
    onClose: () => void;
    onLogOut: () => void;
+   anchorRect: DOMRect | null;
+   user: User | null;
 }
 
-function Menu({ anchorRect, onClose, onLogOut }: MenuProps) {
+function Menu({ onClose, onLogOut, anchorRect, user }: MenuProps) {
    if (!anchorRect) return null;
 
    const top = anchorRect.bottom + 10;
@@ -28,7 +30,7 @@ function Menu({ anchorRect, onClose, onLogOut }: MenuProps) {
                top: `${top}px`,
                right: `${right}px`,
             }}>
-            <h4>John Doe</h4>
+            <h4>{user?.name}</h4>
             <ul className={styles.menuList}>
                <li className={styles.menuItem}>Profile</li>
                <li className={styles.menuItem}>Settings</li>
