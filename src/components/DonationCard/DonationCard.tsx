@@ -5,21 +5,21 @@ interface DonationCardProps {
    title: string;
    target: number;
    amount: number;
-   children: React.ReactNode;
    isOpen: boolean;
    onShowMore: () => void;
    onShowModal: () => void;
+   children: React.ReactNode;
 }
 
 function DonationCard({
    title,
    target,
+   amount,
    isOpen,
    onShowMore,
    onShowModal,
    children,
 }: DonationCardProps) {
-   const [amount, setAmount] = useState(target / 5);
    const progress = (amount / target) * 100;
 
    return (
@@ -34,10 +34,7 @@ function DonationCard({
                        ? styles.med
                        : styles.high
                }`}
-               onClick={(e) => {
-                  e.stopPropagation();
-                  onShowModal();
-               }}>
+               onClick={onShowModal}>
                Donate Now!
             </button>
          </header>

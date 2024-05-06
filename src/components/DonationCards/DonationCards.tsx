@@ -1,12 +1,15 @@
+import { useState } from 'react';
 import styles from './DonationCards.module.css';
 import DonationCard from '../DonationCard/DonationCard';
-import { useState } from 'react';
+import DonationCardModal from '../DonationCardModal';
 
 interface DonationCardData {
    id: number;
    title: string;
    text: string;
+   amount: number;
    target: number;
+   image?: string;
 }
 
 const donationCards: DonationCardData[] = [
@@ -19,7 +22,9 @@ const donationCards: DonationCardData[] = [
                 anti-poaching patrols, and educational programs aimed at raising awareness about the 
                 importance of biodiversity and marine habitats. Your generous support can make a significant difference 
                 in preserving these magnificent creatures for future generations.`,
+      amount: 0,
       target: 5000000,
+      image: 'images/test.jpg',
    },
    {
       id: 2,
@@ -30,6 +35,7 @@ const donationCards: DonationCardData[] = [
                 development and training programs for teachers, ensuring that they are equipped with the tools and 
                 knowledge to deliver high-quality education. Help us create opportunities for students in need to thrive 
                 academically and reach their full potential.`,
+      amount: 0,
       target: 3000000,
    },
 ];
@@ -37,9 +43,29 @@ const donationCards: DonationCardData[] = [
 function DonationCards() {
    const [openCardId, setOpenCardId] = useState(-1);
    const [isModalOpen, setIsModalOpen] = useState(false);
+   const [selectedCard, setSelectedCard] = useState<DonationCardData | null>(
+      null
+   );
 
-   const handleShowModal = () => {
+   const handleShowModal = (card: DonationCardData) => {
+      setSelectedCard(card);
       setIsModalOpen(true);
+   };
+
+   const handleCloseModal = () => {
+      setIsModalOpen(false);
+      setSelectedCard(null);
+   };
+
+   const handleUpdateDonationAmount = (amount: number) => {
+      if (selectedCard) {
+         const cardIndex = donationCards.findIndex(
+            (card) => card.id === selectedCard.id
+         );
+         if (cardIndex !== -1) {
+            donationCards[cardIndex].amount += amount;
+         }
+      }
    };
 
    return (
@@ -49,17 +75,26 @@ function DonationCards() {
                key={donationCard.id}
                title={donationCard.title}
                target={donationCard.target}
-               amount={Math.random() * donationCard.target}
+               amount={donationCard.amount}
                isOpen={openCardId === donationCard.id}
                onShowMore={() =>
                   setOpenCardId(
                      openCardId !== donationCard.id ? donationCard.id : -1
                   )
                }
-               onShowModal={onShowModal}>
+               onShowModal={() => handleShowModal(donationCard)}>
                {donationCard.text}
             </DonationCard>
          ))}
+         {isModalOpen && selectedCard && (
+            <DonationCardModal
+               title={selectedCard.title}
+               target={selectedCard.target}
+               amount={selectedCard.amount}
+               onUpdateDonationAmount={handleUpdateDonationAmount}
+               onCloseModal={handleCloseModal}
+            />
+         )}
       </div>
    );
 }

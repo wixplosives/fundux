@@ -2,10 +2,20 @@ import { useContext, useState } from 'react';
 import styles from './DonationCardModal.module.css';
 
 interface DonationCardModalProps {
+   title: string;
+   target: number;
+   amount: number;
+   onUpdateDonationAmount: (amount: number) => void;
    onCloseModal: () => void;
 }
 
-function DonationCardModal({ onCloseModal }: DonationCardModalProps) {
+function DonationCardModal({
+   title,
+   target,
+   amount,
+   onUpdateDonationAmount,
+   onCloseModal,
+}: DonationCardModalProps) {
    const [donationAmount, setDonationAmount] = useState(0);
 
    const handleBackgroundClick = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -20,6 +30,8 @@ function DonationCardModal({ onCloseModal }: DonationCardModalProps) {
 
    const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
+      onUpdateDonationAmount(donationAmount);
+      onCloseModal();
    };
 
    return (
@@ -27,7 +39,7 @@ function DonationCardModal({ onCloseModal }: DonationCardModalProps) {
          <form className={styles.modalContent} onSubmit={handleFormSubmit}>
             <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
                <div className={styles.modalHeaderContent}>
-                  <h2>Some Text</h2>
+                  <h2>{title}</h2>
                   <button className={styles.xButton} onClick={onCloseModal}>
                      &times;
                   </button>
@@ -40,13 +52,13 @@ function DonationCardModal({ onCloseModal }: DonationCardModalProps) {
                      id="amount"
                      type="range"
                      min="0"
-                     max="5000"
+                     max={target - amount}
                      step="50"
                      aria-required="true"
                      onChange={handleAmountChange}
                   />
                   <span className={styles.amount}>
-                     {donationAmount} / 5000 $
+                     {donationAmount + amount} / {target} $
                   </span>
                </div>
                <button type="submit" className={`${styles.submitButton}`}>
