@@ -1,5 +1,5 @@
 import styles from './DonationCard.module.css';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 interface DonationCardProps {
    title: string;
@@ -8,16 +8,18 @@ interface DonationCardProps {
    children: React.ReactNode;
    isOpen: boolean;
    onShowMore: () => void;
+   onShowModal: () => void;
 }
 
 function DonationCard({
    title,
    target,
-   amount,
    isOpen,
    onShowMore,
+   onShowModal,
    children,
 }: DonationCardProps) {
+   const [amount, setAmount] = useState(target / 5);
    const progress = (amount / target) * 100;
 
    return (
@@ -31,7 +33,11 @@ function DonationCard({
                      : progress < 67
                        ? styles.med
                        : styles.high
-               }`}>
+               }`}
+               onClick={(e) => {
+                  e.stopPropagation();
+                  onShowModal();
+               }}>
                Donate Now!
             </button>
          </header>
