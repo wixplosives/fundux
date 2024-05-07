@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import styles from '../../common/commonOptionButton.module.css';
-import filterStyles from './Filters.module.css';
+import { useState } from 'react';
+import commonOptionButtonStyles from '../../common/commonOptionButton.module.css';
+import styles from './FiltersButton.module.css';
 
-const filterOptions = ['Animals', 'Health', 'Education', 'Environment'];
+const filterOptions: string[] = [
+   'Animals',
+   'Health',
+   'Education',
+   'Environment',
+];
 
-function Filters() {
+function FiltersButton() {
    const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
    const [isOpen, setIsOpen] = useState<boolean>(false);
 
@@ -20,23 +25,26 @@ function Filters() {
       }
    };
 
+   const selected = (option: string) =>
+      selectedFilters.includes(option) ? styles.selected : '';
+
+   const opened = () => (isOpen ? commonOptionButtonStyles.open : '');
+
    return (
-      <div className={filterStyles.filters}>
+      <div className={styles.filters}>
          <button
-            className={`${styles.button} ${isOpen ? styles.open : null}`}
+            className={`${commonOptionButtonStyles.button} ${opened()}`}
             onClick={toggleIsOpen}>
             Filters: {selectedFilters.join(', ')} {isOpen ? '▲' : '▼'}
          </button>
          {isOpen && (
-            <ul className={styles.optionsList}>
+            <ul className={commonOptionButtonStyles.optionsList}>
                {filterOptions.map((option) => (
                   <li
                      key={option}
-                     className={`${styles.optionItem} ${
-                        selectedFilters.includes(option)
-                           ? filterStyles.selected
-                           : ''
-                     }`}
+                     className={`${
+                        commonOptionButtonStyles.optionItem
+                     } ${selected(option)}`}
                      onClick={() => handleFilterClick(option)}>
                      {selectedFilters.includes(option) ? `✓ ${option}` : option}
                   </li>
@@ -47,4 +55,4 @@ function Filters() {
    );
 }
 
-export default Filters;
+export default FiltersButton;
