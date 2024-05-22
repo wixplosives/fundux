@@ -1,5 +1,4 @@
 import styles from './DonationCard.module.css';
-import React from 'react';
 
 export interface DonationCardProps {
     title: string;
