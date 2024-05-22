@@ -1,13 +1,18 @@
 import Header from './components/Header';
-import DonationCards from './components/DonationCards';
+import HeroSection from './components/HeroSection';
+import OptionButtons from './components/OptionButtons';
+import SortByButton from './components/SortByButton';
 
 function App() {
-    return (
-        <div>
-            <Header />
-            <DonationCards />
-        </div>
-    );
+   return (
+      <div>
+         <Header />
+         <HeroSection />
+         <OptionButtons>
+            <SortByButton />
+         </OptionButtons>
+      </div>
+   );
 }
 
 export default App;
