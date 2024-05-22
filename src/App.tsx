@@ -1,3 +1,4 @@
+import FiltersButton from './components/FiltersButton';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import OptionButtons from './components/OptionButtons';
@@ -11,6 +12,7 @@ function App() {
          <HeroSection />
          <OptionButtons>
             <SortByButton />
+            <FiltersButton />
          </OptionButtons>
          <DonationCards />
       </div>
