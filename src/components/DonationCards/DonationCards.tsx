@@ -25,7 +25,7 @@ const donationCards: DonationCardData[] = [
 
 function DonationCards() {
    return (
-      <div className={styles.donationCards}>
+      <main className={styles.donationCards}>
          {donationCards.map((donationCard) => (
             <DonationCard
                key={donationCard.id}
@@ -34,7 +34,7 @@ function DonationCards() {
                target={donationCard.target}
             />
          ))}
-      </div>
+      </main>
    );
 }
 
