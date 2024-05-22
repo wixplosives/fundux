@@ -1,20 +1,20 @@
 import styles from './DonationCard.module.css';
 import React from 'react';
 
-interface DonationCardProps {
+export interface DonationCardProps {
     title: string;
+    text: string;
     target: number;
-    children: React.ReactNode;
 }
 
-function DonationCard({title, target, children}: DonationCardProps) {
+function DonationCard({title, text, target}: DonationCardProps) {
     return (
         <article className={styles.card}>
             <header>
                 <h3>{title}</h3>
             </header>
             <div>
-                {children}
+                {text}
                 <footer>
                     <p>Target: {target}</p>
                 </footer>

@@ -2,6 +2,7 @@ import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import OptionButtons from './components/OptionButtons';
 import SortByButton from './components/SortByButton';
+import DonationCards from './components/DonationCards/DonationCards';
 
 function App() {
    return (
@@ -11,6 +12,7 @@ function App() {
          <OptionButtons>
             <SortByButton />
          </OptionButtons>
+         <DonationCards />
       </div>
    );
 }
