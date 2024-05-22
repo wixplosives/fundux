@@ -4,10 +4,10 @@ export default defineConfig({
    testDir: './test',
    timeout: 30000,
    retries: 2,
-   reporter: [['list'], ['html', { outputFolder: 'playwright-report' }]],
+   reporter: [['list']],
    use: {
       baseURL: 'http://localhost:5173',
-      headless: false,
+      headless: true,
       viewport: { width: 1280, height: 720 },
    },
 });
