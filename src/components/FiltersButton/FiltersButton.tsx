@@ -19,7 +19,11 @@ function FiltersButton() {
 
    const handleFilterClick = (filter: string) => {
       if (selectedFilters.includes(filter)) {
-         setSelectedFilters(selectedFilters.filter((f) => f !== filter));
+         setSelectedFilters(
+            selectedFilters.filter(
+               (selectedFilter) => selectedFilter !== filter
+            )
+         );
       } else {
          setSelectedFilters([...selectedFilters, filter]);
       }
@@ -29,6 +33,13 @@ function FiltersButton() {
       selectedFilters.includes(option) ? styles.selected : '';
 
    const opened = () => (isOpen ? commonOptionButtonStyles.open : '');
+
+   const getOptionClassNames = (option: string) =>
+      `${commonOptionButtonStyles.optionItem} ${selected(option)}`;
+
+   const formatOption = (option: string) => {
+      return selectedFilters.includes(option) ? `✓ ${option}` : option;
+   };
 
    return (
       <div className={styles.filters}>
@@ -42,11 +53,9 @@ function FiltersButton() {
                {filterOptions.map((option) => (
                   <li
                      key={option}
-                     className={`${
-                        commonOptionButtonStyles.optionItem
-                     } ${selected(option)}`}
+                     className={getOptionClassNames(option)}
                      onClick={() => handleFilterClick(option)}>
-                     {selectedFilters.includes(option) ? `✓ ${option}` : option}
+                     {formatOption(option)}
                   </li>
                ))}
             </ul>
