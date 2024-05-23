@@ -4,7 +4,7 @@ function HeroSection() {
    return (
       <section className={styles.heroSection}>
          <article className={styles.heroSectionText}>
-            <h1>Transform Lives <br/> with a Single <br/> Gesture</h1>
+            <h1>Transform Lives <br/> with a Single Gesture</h1>
             <p>
                Every donation lights up a path to a brighter future. <br />
                Join us in making a real difference where it matters most. <br />
