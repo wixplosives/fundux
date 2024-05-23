@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import styles from './DonationCards.module.css';
-import DonationCard from '../DonationCard/DonationCard';
+import DonationCard from '../DonationCard';
 import cards, { DonationCardData } from '../../data/cards';
 
 function DonationCards() {
