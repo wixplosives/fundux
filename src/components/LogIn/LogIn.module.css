@@ -1,23 +1,23 @@
 .logIn {
-   margin-right: 1em;
+   padding: 2em;
 }
 
 .logInButton {
    width: 6em;
-   height: 4em;
-   font-size: 1rem;
-   font-family: Roboto;
+   height: 2.5em;
+   font-family: 'Roboto', sans-serif;
    font-weight: 300;
-   white-space: nowrap;
-   background-color: #a5d8ff;
-   border-radius: 0.7em;
-   border: none;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-   transition: 0.2s ease-in-out;
+   font-size: 1em;
+   color: rgb(50, 50, 50);
+   background-color: rgba(255, 255, 255, 0.2);
+   border: 1px solid rgb(200, 200, 200);
+   border-radius: 25px;
+   transition: all 0.3s ease-in-out;
    cursor: pointer;
 }
 
 .logInButton:hover {
-   background-color: #4dabf7;
-   color: white;
+   background-color: white;
+   color: rgb(80, 80, 80);
+   box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }

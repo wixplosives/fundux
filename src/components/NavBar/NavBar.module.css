@@ -1,26 +1,23 @@
 .navBar {
    display: flex;
-   align-items: center;
-   background-color: #e9ecef;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   justify-content: end;
    width: 100%;
-   border-radius: 0.7em;
-   margin-right: 1em;
-   height: 4em;
+   padding: 2em;
 }
 
 .navList {
    display: flex;
-   align-items: center;
+   justify-content: end;
+   gap: 5em;
+   width: 50%;
    list-style-type: none;
 }
 
 .navItem {
-   margin: 0 1em;
    cursor: pointer;
-   transition: color 0.2s;
-   font-family: Roboto;
+   font-family: 'Roboto', sans-serif;
    font-weight: 300;
+   transition: color 0.2s ease-in-out;
 }
 
 .navItem:hover {
