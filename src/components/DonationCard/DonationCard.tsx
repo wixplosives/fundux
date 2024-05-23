@@ -1,24 +1,23 @@
 import styles from './DonationCard.module.css';
-import React from 'react';
 
 interface DonationCardProps {
    title: string;
-   target: number;
+   description: string;
+   donationTarget: number;
    amount: number;
-   children: React.ReactNode;
    isOpen: boolean;
    onShowMore: () => void;
 }
 
 function DonationCard({
    title,
-   target,
+   description,
+   donationTarget,
    amount,
    isOpen,
    onShowMore,
-   children,
 }: DonationCardProps) {
-   const progress = (amount / target) * 100;
+   const progress = (amount / donationTarget) * 100;
 
    return (
       <article className={styles.card} onClick={onShowMore}>
@@ -35,7 +34,7 @@ function DonationCard({
                Donate Now!
             </button>
          </header>
-         {isOpen && <div className={styles.content}>{children}</div>}
+         {isOpen && <div className={styles.content}>{description}</div>}
          <footer className={styles.footer}>
             <div className={styles.targetInfo}>
                <div className={styles.progressBar}>
@@ -54,7 +53,7 @@ function DonationCard({
                      {progress.toFixed(0)}%
                   </div>
                </div>
-               <p className={styles.targetAmount}>${target.toLocaleString()}</p>
+               <p className={styles.targetAmount}>${donationTarget.toLocaleString()}</p>
             </div>
             <button className={styles.btn} onClick={onShowMore}>
                {isOpen ? 'Show Less' : 'Show More'}
