@@ -9,6 +9,18 @@ interface DonationCardProps {
    onShowMore: () => void;
 }
 
+const getButtonClassNames = (progress: number) => {
+   return `${styles.donationCardButton} ${
+      progress < 33 ? styles.low : progress < 67 ? styles.med : styles.high
+   }`;
+};
+
+const getDonationCardProgressClassNames = (progress: number) => {
+   return `${styles.donationCardProgress} ${
+      progress < 33 ? styles.low : progress < 67 ? styles.med : styles.high
+   }`;
+};
+
 function DonationCard({
    title,
    description,
@@ -20,32 +32,21 @@ function DonationCard({
    const progress = (amount / donationTarget) * 100;
 
    return (
-      <article className={styles.card} onClick={onShowMore}>
-         <header className={styles.header}>
-            <h2>{title}</h2>
-            <button
-               className={`${styles.btn} ${
-                  progress < 33
-                     ? styles.low
-                     : progress < 67
-                       ? styles.med
-                       : styles.high
-               }`}>
+      <article className={styles.donationCard} onClick={onShowMore}>
+         <header className={styles.donationCardHeader}>
+            <h2 className={styles.donationCardTitle}>{title}</h2>
+            <button className={getButtonClassNames(progress)}>
                Donate Now!
             </button>
          </header>
-         {isOpen && <div className={styles.content}>{description}</div>}
-         <footer className={styles.footer}>
-            <div className={styles.targetInfo}>
-               <div className={styles.progressBar}>
+         {isOpen && (
+            <div className={styles.donationCardDescription}>{description}</div>
+         )}
+         <footer className={styles.donationCardFooter}>
+            <section className={styles.donationCardTargetInfo}>
+               <div className={styles.donationCardProgressBar}>
                   <div
-                     className={`${styles.progress} ${
-                        progress < 33
-                           ? styles.low
-                           : progress < 67
-                             ? styles.med
-                             : styles.high
-                     }`}
+                     className={getDonationCardProgressClassNames(progress)}
                      style={{
                         width: `${progress}%`,
                         pointerEvents: 'none',
@@ -53,9 +54,11 @@ function DonationCard({
                      {progress.toFixed(0)}%
                   </div>
                </div>
-               <p className={styles.targetAmount}>${donationTarget.toLocaleString()}</p>
-            </div>
-            <button className={styles.btn} onClick={onShowMore}>
+               <p className={styles.donationCardDonationTarget}>
+                  ${donationTarget.toLocaleString()}
+               </p>
+            </section>
+            <button className={styles.donationCardButton} onClick={onShowMore}>
                {isOpen ? 'Show Less' : 'Show More'}
             </button>
          </footer>
