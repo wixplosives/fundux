@@ -1,11 +1,11 @@
 .donationCard {
    margin-bottom: 1.5em;
-   padding: 2rem;
+   padding: 2em;
    background-color: #e9ecef;
    border: 1px solid #ccc;
    border-radius: 0.7em;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-   font-family: Roboto;
+   font-family: Roboto, sans-serif;
    cursor: pointer;
    transition: all 0.2s ease-in-out;
 }
@@ -16,7 +16,6 @@
 .donationCardHeader {
    display: flex;
    justify-content: space-between;
-   align-content: center;
    align-items: center;
    user-select: none;
 }
@@ -24,7 +23,7 @@
    color: #333;
 }
 .donationCardButton {
-   padding: 10px 20px;
+   padding: 0.625em 1.25em;
    border: none;
    border-radius: 0.7em;
    background-color: #4dabf7;
@@ -37,11 +36,8 @@
 }
 .donationCardDescription {
    width: 60%;
-   font-family: 'Roboto', sans-serif;
    color: #2c3e50;
    line-height: 2;
-}
-.donationCardFooter {
 }
 .donationCardTargetInfo {
    display: flex;
@@ -60,11 +56,10 @@
    border-radius: 0.7em;
 }
 .donationCardDonationTarget {
+   min-width: 10%;
    font-size: 1.5em;
    color: #34495e;
    text-align: right;
-   width: 10%;
-   min-width: 5em;
 }
 .low {
    background-color: #f08c00;

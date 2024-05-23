@@ -42,7 +42,7 @@ function DonationCard({
          {isOpen && (
             <div className={styles.donationCardDescription}>{description}</div>
          )}
-         <footer className={styles.donationCardFooter}>
+         <footer>
             <section className={styles.donationCardTargetInfo}>
                <div className={styles.donationCardProgressBar}>
                   <div

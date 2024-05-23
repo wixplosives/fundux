@@ -29,13 +29,12 @@ export default createBoard({
          description={donationCard.description}
          donationTarget={donationCard.donationTarget}
          amount={Math.random() * donationCard.donationTarget}
-         isOpen={true}
+         isOpen={false}
          onShowMore={() => null}
       />
    ),
    isSnippet: true,
    environmentProps: {
       canvasWidth: 1024,
-
    },
 });
