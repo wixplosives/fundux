@@ -16,8 +16,8 @@ function DonationCards() {
             <DonationCard
                key={donationCard.id}
                title={donationCard.title}
-               text={donationCard.text}
-               target={donationCard.target}
+               description={donationCard.description}
+               donationTarget={donationCard.donationTarget}
             />
          ))}
       </main>

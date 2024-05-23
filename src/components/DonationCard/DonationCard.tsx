@@ -2,20 +2,20 @@ import styles from './DonationCard.module.css';
 
 export interface DonationCardProps {
    title: string;
-   text: string;
-   target: number;
+   description: string;
+   donationTarget: number;
 }
 
-function DonationCard({ title, text, target }: DonationCardProps) {
+function DonationCard({ title, description, donationTarget }: DonationCardProps) {
    return (
       <article className={styles.donationCard}>
          <header>
             <h3>{title}</h3>
          </header>
          <section>
-            <p>{text}</p>
+            <p>{description}</p>
             <footer>
-               <p>Target: {target}</p>
+               <p>Target: {donationTarget}</p>
             </footer>
          </section>
       </article>
