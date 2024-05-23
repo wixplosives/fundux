@@ -8,12 +8,6 @@ import DonationCards from './components/DonationCards';
 function App() {
    return (
       <div>
-         <Header />
-         <HeroSection />
-         <OptionButtons>
-            <SortByButton />
-            <FiltersButton />
-         </OptionButtons>
          <DonationCards />
       </div>
    );

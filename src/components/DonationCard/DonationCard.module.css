@@ -1,16 +1,18 @@
 .donationCard {
+   width: 70%;
+   max-width: 70%;
    margin-bottom: 1.5em;
-   padding: 2em;
-   background-color: #e9ecef;
+   background-color: #fff;
+   color: #333;
    border: 1px solid #ccc;
-   border-radius: 0.7em;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
    font-family: Roboto, sans-serif;
-   cursor: pointer;
    transition: all 0.2s ease-in-out;
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   border-radius: 5px;
 }
 .donationCard:hover {
-   transform: translateY(-5px);
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 .donationCardHeader {
@@ -20,40 +22,60 @@
    user-select: none;
 }
 .donationCardTitle {
-   color: #333;
+   font-size: 2em;
 }
 .donationCardButton {
    padding: 0.625em 1.25em;
-   border: none;
+   background-color: white;
+   border: 1px solid #333;
    border-radius: 0.7em;
-   background-color: #4dabf7;
-   color: white;
    cursor: pointer;
    transition: background-color 0.3s ease;
 }
 .donationCardButton:hover {
-   background-color: #228be6;
+   background-color: #333;
+   color: white;
 }
 .donationCardDescription {
-   width: 60%;
-   color: #2c3e50;
+   position: relative;
+   width: 80%;
+   height: 100px;
+   overflow: hidden;
    line-height: 2;
+}
+.donationCardDescription::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 5em;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+}
+.donationCardDescription.open {
+   height: auto;
+}
+.donationCardDescription.open::after {
+    background: none;
 }
 .donationCardTargetInfo {
    display: flex;
    flex-wrap: nowrap;
    align-items: center;
+   justify-content: space-between;
+   margin-bottom: 1em;
 }
 .donationCardProgressBar {
-   width: 90%;
-   background-color: #ccc;
-   border-radius: 0.7em;
+   width: 80%;
+   background-color: #aaa;
+   border-radius: 0.2em;
+      border: 1px solid #333;
+
 }
 .donationCardProgress {
    color: white;
    text-align: center;
-   border: 4px solid #ccc;
-   border-radius: 0.7em;
+   border-radius: 0.2em;
 }
 .donationCardDonationTarget {
    min-width: 10%;
@@ -63,19 +85,50 @@
 }
 .low {
    background-color: #f08c00;
+   border: none;
 }
 .low:hover {
    background-color: #e8590c;
+   color: white;
 }
 .med {
    background-color: #ffd43b;
+   border: none;
 }
 .med:hover {
    background-color: #fab005;
+   color: white;
 }
 .high {
-   background-color: #69db7c;
+   background-color: #82d88d;
+   border: none;
 }
 .high:hover {
    background-color: #40c057;
+   color: white;
+}
+.donationCardImage {
+   overflow: hidden;
+}
+.donationCardImage {
+   max-height: 300px;
+   opacity: 0.5;
+   border: 2px solid white;
+   border-radius: 5px;
+   box-sizing: border-box;
+   transition: opacity 0.3s ease-in-out;
+}
+.donationCardImage img {
+   width: 100%;
+   height: 300px;
+   border-radius: 5px;
+}
+.donationCard:hover .donationCardImage {
+   opacity: 1;
+}
+.donationCardContent {
+   display: flex;
+   flex-direction: column;
+   padding: 1em;
+   justify-content: space-between;
 }

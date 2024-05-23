@@ -32,36 +32,53 @@ function DonationCard({
    const progress = (amount / donationTarget) * 100;
 
    return (
-      <article className={styles.donationCard} onClick={onShowMore}>
-         <header className={styles.donationCardHeader}>
-            <h2 className={styles.donationCardTitle}>{title}</h2>
-            <button className={getButtonClassNames(progress)}>
-               Donate Now!
-            </button>
-         </header>
-         {isOpen && (
-            <section className={styles.donationCardDescription}>{description}</section>
-         )}
-         <footer>
-            <section className={styles.donationCardTargetInfo}>
-               <div className={styles.donationCardProgressBar}>
-                  <div
-                     className={getDonationCardProgressClassNames(progress)}
-                     style={{
-                        width: `${progress}%`,
-                        pointerEvents: 'none',
-                     }}>
-                     {progress.toFixed(0)}%
+      <article className={styles.donationCard}>
+         <section className={styles.donationCardImage}>
+            <img
+               src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
+               alt=""
+            />
+         </section>
+         <section className={styles.donationCardContent}>
+            <header className={styles.donationCardHeader}>
+               <h2 className={styles.donationCardTitle}>{title}</h2>
+               <button className={getButtonClassNames(progress)}>
+                  Donate Now
+               </button>
+            </header>
+            {isOpen ? (
+               <section
+                  className={`${styles.donationCardDescription} ${styles.open}`}>
+                  {description}
+               </section>
+            ) : (
+               <section className={`${styles.donationCardDescription}`}>
+                  {description}
+               </section>
+            )}
+            <footer>
+               <section className={styles.donationCardTargetInfo}>
+                  <div className={styles.donationCardProgressBar}>
+                     <div
+                        className={getDonationCardProgressClassNames(progress)}
+                        style={{
+                           width: `${progress}%`,
+                           pointerEvents: 'none',
+                        }}>
+                        {progress.toFixed(0)}%
+                     </div>
                   </div>
-               </div>
-               <p className={styles.donationCardDonationTarget}>
-                  ${donationTarget.toLocaleString()}
-               </p>
-            </section>
-            <button className={styles.donationCardButton} onClick={onShowMore}>
-               {isOpen ? 'Show Less' : 'Show More'}
-            </button>
-         </footer>
+                  <p className={styles.donationCardDonationTarget}>
+                     ${donationTarget.toLocaleString()}
+                  </p>
+               </section>
+               <button
+                  className={styles.donationCardButton}
+                  onClick={onShowMore}>
+                  {isOpen ? 'Show Less' : 'Show More'}
+               </button>
+            </footer>
+         </section>
       </article>
    );
 }
