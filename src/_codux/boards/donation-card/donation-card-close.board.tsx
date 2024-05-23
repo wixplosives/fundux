@@ -21,7 +21,7 @@ const donationCard: DonationCardData = {
 };
 
 export default createBoard({
-   name: 'DonationCard - Open',
+   name: 'DonationCard - Closed',
    Board: () => (
       <DonationCard
          key={donationCard.id}
