@@ -5,7 +5,7 @@ import cards, { DonationCardData } from '../../../data/cards';
 const donationCard: DonationCardData = cards[0];
 
 export default createBoard({
-   name: 'DonationCard - Closed',
+   name: 'DonationCard - Open',
    Board: () => (
       <DonationCard
          key={donationCard.id}
