@@ -33,7 +33,7 @@ function DonationCards() {
                   <input
                      type="text"
                      placeholder="Search..."
-                     className={styles.searchInput}
+                     className={styles.donationCardsSearchInput}
                   />
                   <i className={`fas fa-search ${styles.searchIcon}`}></i>
                </div>

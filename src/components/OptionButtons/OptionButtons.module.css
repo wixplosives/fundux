@@ -1,5 +1,5 @@
 .optionButtons {
-   margin: 2em;
    display: flex;
-   gap: 1em;
+   width: 70%;
+   justify-content: space-between;
 }

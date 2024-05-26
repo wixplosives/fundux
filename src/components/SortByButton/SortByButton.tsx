@@ -24,17 +24,17 @@ function SortByButton() {
                isOpen ? commonOptionButtonStyles.open : null
             }`}
             onClick={toggleIsOpen}>
-            Sort By: {selectedOption} {isOpen ? '▲' : '▼'}
+            Sort By: {isOpen ? '▲' : '▼'}
          </button>
          {isOpen && (
             <ul className={commonOptionButtonStyles.optionsList}>
                {sortOptions.map((option) => (
-                  <li
+                  <button
                      key={option}
-                     className={commonOptionButtonStyles.optionItem}
+                     className={commonOptionButtonStyles.button}
                      onClick={() => handleSelectedOption(option)}>
                      {option}
-                  </li>
+                  </button>
                ))}
             </ul>
          )}

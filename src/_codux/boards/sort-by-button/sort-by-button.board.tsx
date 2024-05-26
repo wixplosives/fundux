@@ -5,8 +5,4 @@ export default createBoard({
    name: 'SortByButton',
    Board: () => <SortByButton />,
    isSnippet: true,
-   environmentProps: {
-      canvasWidth: 1024,
-      canvasHeight: 768,
-   },
 });
