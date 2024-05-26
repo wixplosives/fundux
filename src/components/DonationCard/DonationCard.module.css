@@ -14,6 +14,7 @@
 }
 .donationCard:hover {
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   color: black;
 }
 .donationCardHeader {
    display: flex;
@@ -44,19 +45,19 @@
    line-height: 2;
 }
 .donationCardDescription::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    height: 5em;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+   content: '';
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   width: 100%;
+   height: 5em;
+   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
 }
 .donationCardDescription.open {
    height: auto;
 }
 .donationCardDescription.open::after {
-    background: none;
+   background: none;
 }
 .donationCardTargetInfo {
    display: flex;
@@ -69,8 +70,7 @@
    width: 80%;
    background-color: #aaa;
    border-radius: 0.2em;
-      border: 1px solid #333;
-
+   border: 1px solid #333;
 }
 .donationCardProgress {
    color: white;
@@ -80,7 +80,6 @@
 .donationCardDonationTarget {
    min-width: 10%;
    font-size: 1.5em;
-   color: #34495e;
    text-align: right;
 }
 .low {

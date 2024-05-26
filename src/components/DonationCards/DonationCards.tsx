@@ -13,6 +13,32 @@ function DonationCards() {
 
    return (
       <main className={styles.donationCards}>
+         <header className={styles.donationCardsHeader}>
+            <h1 className={styles.donationCardsTitle}>
+               Discover Our <br />
+               Partners in Impact
+            </h1>
+         </header>
+         <section className={styles.donationCardsOptionsButtonsBar}>
+            <div className={styles.donationCardsOptionsButtons}>
+               <div className={styles.donationCardLeftButtons}>
+                  <button className={styles.donationCardsButton}>
+                     Sort By ▼
+                  </button>
+                  <button className={styles.donationCardsButton}>
+                     Filters ▼
+                  </button>
+               </div>
+               <div className={styles.donationCardsRightButton}>
+                  <input
+                     type="text"
+                     placeholder="Search..."
+                     className={styles.searchInput}
+                  />
+                  <i className={`fas fa-search ${styles.searchIcon}`}></i>
+               </div>
+            </div>
+         </section>
          {donationCards.map((donationCard) => (
             <DonationCard
                key={donationCard.id}
