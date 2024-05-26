@@ -7,7 +7,7 @@
       "dev": "vite",
       "build": "tsc && vite build",
       "preview": "vite preview",
-      "test": "NODE_OPTIONS='--loader ts-node/esm' mocha"
+      "test": "NODE_OPTIONS='--loader ts-node/esm' NODE_NO_WARNINGS=1 mocha"
    },
    "dependencies": {
       "classnames": "^2.5.1",
