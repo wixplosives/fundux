@@ -8,7 +8,6 @@ export default createBoard({
    name: 'DonationCard - Closed',
    Board: () => (
       <DonationCard
-         key={donationCard.id}
          title={donationCard.title}
          description={donationCard.description}
          donationTarget={donationCard.donationTarget}
