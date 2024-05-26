@@ -40,7 +40,9 @@ function DonationCard({
             </button>
          </header>
          {isOpen && (
-            <section className={styles.donationCardDescription}>{description}</section>
+            <section className={styles.donationCardDescription}>
+               {description}
+            </section>
          )}
          <footer>
             <section className={styles.donationCardTargetInfo}>
