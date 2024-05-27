@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { chromium, Browser, Page } from 'playwright-chromium';
 import { describe, it, before, after } from 'mocha';
+import { options } from './constants';
 
 describe('SortByButton Component', function () {
    this.timeout(5000);
@@ -8,42 +9,20 @@ describe('SortByButton Component', function () {
    let browser: Browser;
    let page: Page;
 
-   const options = ['Newest', 'Oldest', 'A-Z', 'Z-A'];
-
    before(async function () {
       browser = await chromium.launch();
-      console.log('╔════════════════════════════════════════════╗');
-      console.log('║ Browser launched                           ║');
-      console.log('╚════════════════════════════════════════════╝');
    });
 
    after(async function () {
       await browser.close();
-      console.log('╔════════════════════════════════════════════╗');
-      console.log('║ Browser closed                             ║');
-      console.log('╚════════════════════════════════════════════╝');
    });
 
    beforeEach(async function () {
       page = await browser.newPage();
       await page.goto('http://localhost:5173');
-      if (this.currentTest) {
-         console.log(
-            `\n╔════════════════════════════════════════════════════════════════════════════════════════╗`
-         );
-         console.log(`║ Starting test: ${this.currentTest.title}`);
-      }
    });
 
    afterEach(async function () {
-      if (this.currentTest) {
-         const status =
-            this.currentTest.state === 'passed' ? 'PASSED' : 'FAILED';
-         console.log(`║ Finished test with status: ${status}`);
-         console.log(
-            '╚════════════════════════════════════════════════════════════════════════════════════════╝\n'
-         );
-      }
       await page.close();
    });
 
