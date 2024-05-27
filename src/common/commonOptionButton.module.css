@@ -16,12 +16,14 @@
 }
 
 .optionsList {
+   position: relative;
    background-color: white;
    border: 1px solid #ccc;
    border-bottom-left-radius: 0.7em;
    border-bottom-right-radius: 0.7em;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
    margin: 0;
+   z-index: 1;
 }
 
 .optionItem {
