@@ -1,81 +1,96 @@
 .donationCard {
    margin-bottom: 1.5em;
    padding: 2em;
-   background-color: #e9ecef;
-   border: 1px solid #ccc;
+   background-color: var(--bg-primary);
+   border: 1px solid var(--border-color);
    border-radius: 0.7em;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-   font-family: Roboto, sans-serif;
+   box-shadow: 0 2px 5px var(--shadow-color);
    cursor: pointer;
    transition: all 0.2s ease-in-out;
 }
+
 .donationCard:hover {
    transform: translateY(-5px);
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   box-shadow: 0 4px 10px var(--shadow-color-hover);
 }
-.donationCardHeader {
+
+.header {
    display: flex;
    justify-content: space-between;
    align-items: center;
    user-select: none;
 }
-.donationCardTitle {
-   color: #333;
+
+.title {
+   color: var(--title-color);
 }
-.donationCardButton {
+
+.button {
    padding: 0.625em 1.25em;
    border: none;
    border-radius: 0.7em;
-   background-color: #4dabf7;
+   background-color: var(--button-bg-color);
    color: white;
    cursor: pointer;
    transition: background-color 0.3s ease;
 }
-.donationCardButton:hover {
-   background-color: #228be6;
+
+.button:hover {
+   background-color: var(--button-bg-color-hover);
 }
-.donationCardDescription {
+
+.description {
    width: 60%;
-   color: #2c3e50;
+   color: var(--description-color);
    line-height: 2;
 }
-.donationCardTargetInfo {
+
+.targetInfo {
    display: flex;
    flex-wrap: nowrap;
    align-items: center;
 }
-.donationCardProgressBar {
+
+.progressBar {
    width: 90%;
-   background-color: #ccc;
+   background-color: var(--border-color);
    border-radius: 0.7em;
 }
-.donationCardProgress {
+
+.progress {
    color: white;
    text-align: center;
-   border: 4px solid #ccc;
+   border: 4px solid var(--border-color);
    border-radius: 0.7em;
 }
-.donationCardDonationTarget {
+
+.target {
    min-width: 10%;
    font-size: 1.5em;
-   color: #34495e;
+   color: var(--target-color);
    text-align: right;
 }
-.low {
-   background-color: #f08c00;
+
+.progressLow {
+   background-color: var(--progress-low);
 }
-.low:hover {
-   background-color: #e8590c;
+
+.progressLow:hover {
+   background-color: var(--progress-low-hover);
 }
-.med {
-   background-color: #ffd43b;
+
+.progressMedium {
+   background-color: var(--progress-medium);
 }
-.med:hover {
-   background-color: #fab005;
+
+.progressMedium:hover {
+   background-color: var(--progress-medium-hover);
 }
-.high {
-   background-color: #69db7c;
+
+.progressHigh {
+   background-color: var(--progress-high);
 }
-.high:hover {
-   background-color: #40c057;
+
+.progressHigh:hover {
+   background-color: var(--progress-high-hover);
 }
