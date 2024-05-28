@@ -2,8 +2,8 @@ import { expect } from 'chai';
 import { chromium, Browser, Page, Locator } from 'playwright-chromium';
 import { describe, it, before, after } from 'mocha';
 import { createServer, ViteDevServer } from 'vite';
-import { options } from '../../test-kit/OptionButtons/constants';
 import { SortByButtonDriver } from '../../test-kit/OptionButtons/sortByButton-driver';
+import { sortByButtonDropDownListOptions } from '../../test-kit/OptionButtons/constants';
 
 describe('SortByButton Component', function () {
    this.timeout(5000);
@@ -37,27 +37,27 @@ describe('SortByButton Component', function () {
    });
 
    it('should toggle dropdown options list on button click', async function () {
-      expect(await sortByButtonDriver.isDropdownVisible()).to.be.false;
+      expect(await sortByButtonDriver.dropDownVisibility()).to.be.false;
       await sortByButtonDriver.toggleDropdown();
-      expect(await sortByButtonDriver.isDropdownVisible()).to.be.true;
+      expect(await sortByButtonDriver.dropDownVisibility()).to.be.true;
       await sortByButtonDriver.toggleDropdown();
-      expect(await sortByButtonDriver.isDropdownVisible()).to.be.false;
+      expect(await sortByButtonDriver.dropDownVisibility()).to.be.false;
    });
 
    it('should close dropdown options list on option click', async function () {
-      for (const option of options) {
+      for (const option of sortByButtonDropDownListOptions) {
          await sortByButtonDriver.toggleDropdown();
-         expect(await sortByButtonDriver.isOptionVisible(option)).to.be.true;
+         expect(await sortByButtonDriver.optionVisibility(option)).to.be.true;
          await sortByButtonDriver.clickOption(option);
-         expect(await sortByButtonDriver.isOptionVisible(option)).to.be.false;
+         expect(await sortByButtonDriver.optionVisibility(option)).to.be.false;
       }
    });
 
    it('should add option to button text on option click', async function () {
-      for (const option of options) {
+      for (const option of sortByButtonDropDownListOptions) {
          await sortByButtonDriver.toggleDropdown();
          await sortByButtonDriver.clickOption(option);
-         expect(await sortByButtonDriver.getButtonText()).to.equal(
+         expect(await sortByButtonDriver.optionsButtonText()).to.equal(
             `Sort By: ${option} ▼`
          );
       }
