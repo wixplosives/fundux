@@ -16,7 +16,7 @@ export class SortByButtonDriver {
       await this.sortByButton.click();
    }
 
-   async isDropdownVisible(): Promise<boolean> {
+   dropDownVisibility(): Promise<boolean> {
       return this.dropDownOptionList.isVisible();
    }
 
@@ -27,14 +27,14 @@ export class SortByButtonDriver {
       await optionLocator.click();
    }
 
-   async isOptionVisible(option: string): Promise<boolean> {
+   optionVisibility(option: string): Promise<boolean> {
       const optionLocator = this.page.locator(
          selectors.dropDownOptionListItem(option)
       );
       return optionLocator.isVisible();
    }
 
-   async getButtonText(): Promise<string> {
+   sortByButtonText(): Promise<string> {
       return this.sortByButton.innerText();
    }
 }

@@ -36,28 +36,28 @@ describe('SortByButton Component', function () {
       await page.close();
    });
 
-   it('should toggle dropdown options list on button click', async function () {
-      expect(await sortByButtonDriver.isDropdownVisible()).to.be.false;
+   it('toggles the dropdown visibility when the button is clicked', async function () {
+      expect(await sortByButtonDriver.dropDownVisibility()).to.be.false;
       await sortByButtonDriver.toggleDropdown();
-      expect(await sortByButtonDriver.isDropdownVisible()).to.be.true;
+      expect(await sortByButtonDriver.dropDownVisibility()).to.be.true;
       await sortByButtonDriver.toggleDropdown();
-      expect(await sortByButtonDriver.isDropdownVisible()).to.be.false;
+      expect(await sortByButtonDriver.dropDownVisibility()).to.be.false;
    });
 
-   it('should close dropdown options list on option click', async function () {
+   it('closes the dropdown options list by clicking any sorting option', async function () {
       for (const option of options) {
          await sortByButtonDriver.toggleDropdown();
-         expect(await sortByButtonDriver.isOptionVisible(option)).to.be.true;
+         expect(await sortByButtonDriver.optionVisibility(option)).to.be.true;
          await sortByButtonDriver.clickOption(option);
-         expect(await sortByButtonDriver.isOptionVisible(option)).to.be.false;
+         expect(await sortByButtonDriver.optionVisibility(option)).to.be.false;
       }
    });
 
-   it('should add option to button text on option click', async function () {
+   it('adds the sorting option text to the button on click', async function () {
       for (const option of options) {
          await sortByButtonDriver.toggleDropdown();
          await sortByButtonDriver.clickOption(option);
-         expect(await sortByButtonDriver.getButtonText()).to.equal(
+         expect(await sortByButtonDriver.sortByButtonText()).to.equal(
             `Sort By: ${option} ▼`
          );
       }
