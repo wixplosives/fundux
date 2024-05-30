@@ -13,19 +13,15 @@ function DonationCards() {
 
    return (
       <main className={styles.donationCards}>
-         {donationCards.map((donationCard) => (
+         {donationCards.map(({ id, title, description, donationTarget }) => (
             <DonationCard
-               key={donationCard.id}
-               title={donationCard.title}
-               description={donationCard.description}
-               donationTarget={donationCard.donationTarget}
-               amount={Math.random() * donationCard.donationTarget}
-               isOpen={openCardId === donationCard.id}
-               onShowMore={() =>
-                  setOpenCardId(
-                     openCardId !== donationCard.id ? donationCard.id : -1
-                  )
-               }
+               key={id}
+               title={title}
+               description={description}
+               donationTarget={donationTarget}
+               amount={Math.random() * donationTarget}
+               isOpen={openCardId === id}
+               onShowMore={() => setOpenCardId(openCardId !== id ? id : -1)}
             />
          ))}
       </main>
