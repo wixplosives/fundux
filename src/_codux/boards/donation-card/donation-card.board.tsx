@@ -2,7 +2,7 @@ import { createBoard } from '@wixc3/react-board';
 import DonationCard from '../../../components/DonationCard';
 import cards, { DonationCardData } from '../../../data/cards';
 
-const { title, description, donationTarget}: DonationCardData = cards[0];
+const { title, description, donationTarget }: DonationCardData = cards[0];
 
 export default createBoard({
    name: 'DonationCard - Open',
