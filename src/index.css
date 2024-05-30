@@ -2,21 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
-   --bg-primary: #e9ecef;
-   --border-color: #ccc;
-   --shadow-color: rgba(0, 0, 0, 0.2);
-   --shadow-color-hover: rgba(0, 0, 0, 0.3);
-   --title-color: #333;
-   --button-bg-color: #4dabf7;
-   --button-bg-color-hover: #228be6;
-   --description-color: #2c3e50;
-   --target-color: #34495e;
-   --progress-low: #f08c00;
-   --progress-low-hover: #e8590c;
-   --progress-medium: #ffd43b;
-   --progress-medium-hover: #fab005;
-   --progress-high: #69db7c;
-   --progress-high-hover: #40c057;
    background-image: repeating-linear-gradient(
       0deg,
       transparent,
