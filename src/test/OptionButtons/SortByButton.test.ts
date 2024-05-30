@@ -4,6 +4,9 @@ import { describe, it, before, after } from 'mocha';
 import { createServer, ViteDevServer } from 'vite';
 import { options } from '../../test-kit/OptionButtons/constants';
 import { SortByButtonDriver } from '../../test-kit/OptionButtons/sortByButton-driver';
+import viteConfig from '../../../vite.config.js';
+
+const port: number | undefined = viteConfig.server?.port;
 
 describe('SortByButton Component', function () {
    this.timeout(5000);
@@ -13,10 +16,8 @@ describe('SortByButton Component', function () {
    let page: Page;
    let sortByButtonDriver: SortByButtonDriver;
 
-   const port: number = 5174;
-
    before(async function () {
-      server = await createServer({ server: { port: port } });
+      server = await createServer();
       await server.listen();
       browser = await chromium.launch();
    });
