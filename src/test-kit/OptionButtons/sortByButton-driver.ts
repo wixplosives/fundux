@@ -1,15 +1,12 @@
 import { Locator, Page } from 'playwright-chromium';
-import { selectors } from '../../test-kit/OptionButtons/selectors';
 
 export class SortByButtonDriver {
    private sortByButton: Locator;
    private dropDownOptionList: Locator;
 
    constructor(private page: Page) {
-      this.sortByButton = page.locator(selectors.sortByButton);
-      this.dropDownOptionList = page.locator(
-         selectors.sortbyButtonDropDownList
-      );
+      this.sortByButton = page.getByRole('button', { name: 'Sort By' });
+      this.dropDownOptionList = page.getByTestId('sort-options');
    }
 
    async toggleDropdown() {
@@ -21,16 +18,12 @@ export class SortByButtonDriver {
    }
 
    async clickOption(option: string) {
-      const optionLocator = this.page.locator(
-         selectors.dropDownOptionListItem(option)
-      );
+      const optionLocator = this.dropDownOptionList.getByText(option);
       await optionLocator.click();
    }
 
-   optionVisibility(option: string): Promise<boolean> {
-      const optionLocator = this.page.locator(
-         selectors.dropDownOptionListItem(option)
-      );
+   async optionVisibility(option: string): Promise<boolean> {
+      const optionLocator = this.dropDownOptionList.getByText(option);
       return optionLocator.isVisible();
    }
 

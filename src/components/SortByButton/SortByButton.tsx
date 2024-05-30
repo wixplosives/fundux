@@ -27,7 +27,9 @@ function SortByButton() {
             Sort By: {selectedOption} {isOpen ? '▲' : '▼'}
          </button>
          {isOpen && (
-            <ul className={commonOptionButtonStyles.optionsList}>
+            <ul
+               data-testid="sort-options"
+               className={commonOptionButtonStyles.optionsList}>
                {sortOptions.map((option) => (
                   <li
                      key={option}
