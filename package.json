@@ -7,7 +7,7 @@
       "dev": "vite",
       "build": "tsc && vite build",
       "preview": "vite preview",
-      "test": "NODE_NO_WARNINGS=1 mocha"
+      "test": "mocha"
    },
    "dependencies": {
       "classnames": "^2.5.1",
