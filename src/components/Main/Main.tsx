@@ -14,7 +14,7 @@ function Main() {
                Partners in Impact
             </h1>
          </header>
-         <section className={styles.optionsButtonsBar}>
+         <section className={styles.bar}>
             <OptionButtons>
                <SortByButton />
                <FiltersButton />
