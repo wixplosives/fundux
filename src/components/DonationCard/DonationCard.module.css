@@ -1,3 +1,5 @@
+@import '../../styles/variables.css';
+
 .donationCard {
    width: 70%;
    max-width: 70%;
@@ -16,16 +18,16 @@
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
    color: black;
 }
-.donationCardHeader {
+.header {
    display: flex;
    justify-content: space-between;
    align-items: center;
    user-select: none;
 }
-.donationCardTitle {
+.title {
    font-size: 2em;
 }
-.donationCardButton {
+.button {
    padding: 0.625em 1.25em;
    background-color: white;
    border: 1px solid #333;
@@ -33,18 +35,18 @@
    cursor: pointer;
    transition: background-color 0.3s ease;
 }
-.donationCardButton:hover {
+.button:hover {
    background-color: #333;
    color: white;
 }
-.donationCardDescription {
+.description {
    position: relative;
    width: 80%;
    height: 100px;
    overflow: hidden;
    line-height: 2;
 }
-.donationCardDescription::after {
+.description::after {
    content: '';
    position: absolute;
    bottom: 0;
@@ -53,79 +55,76 @@
    height: 5em;
    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
 }
-.donationCardDescription.open {
+.description.open {
    height: auto;
 }
-.donationCardDescription.open::after {
+.description.open::after {
    background: none;
 }
-.donationCardTargetInfo {
+.targetInfo {
    display: flex;
    flex-wrap: nowrap;
    align-items: center;
    justify-content: space-between;
    margin-bottom: 1em;
 }
-.donationCardProgressBar {
+.progressBar {
    width: 80%;
    background-color: #aaa;
    border-radius: 0.2em;
    border: 1px solid #333;
 }
-.donationCardProgress {
+.progress {
    color: white;
    text-align: center;
    border-radius: 0.2em;
 }
-.donationCardDonationTarget {
+.donationTarget {
    min-width: 10%;
    font-size: 1.5em;
    text-align: right;
 }
-.low {
-   background-color: #f08c00;
+.progressLow {
+   background-color: var(--progress-low);
    border: none;
 }
-.low:hover {
-   background-color: #e8590c;
+.progressLow:hover {
+   background-color: var(--progress-low-hover);
    color: white;
 }
-.med {
-   background-color: #ffd43b;
+.progressMedium {
+   background-color: var(--progress-medium);
    border: none;
 }
-.med:hover {
-   background-color: #fab005;
-   color: white;
+.progressMedium:hover {
+   background-color: var(--progress-medium-hover);
 }
-.high {
-   background-color: #82d88d;
+.progressHigh {
+   background-color: var(--progress-high);
    border: none;
 }
-.high:hover {
-   background-color: #40c057;
+.progressHigh:hover {
+   background-color: var(--progress-high-hover);
    color: white;
 }
-.donationCardImage {
-   overflow: hidden;
-}
-.donationCardImage {
+.image {
    max-height: 300px;
    opacity: 0.5;
    border: 2px solid white;
    border-radius: 5px;
    box-sizing: border-box;
    transition: opacity 0.3s ease-in-out;
+   overflow: hidden;
 }
-.donationCardImage img {
+.image img {
    width: 100%;
    height: 300px;
    border-radius: 5px;
 }
-.donationCard:hover .donationCardImage {
+.donationCard:hover .image {
    opacity: 1;
 }
-.donationCardContent {
+.content {
    display: flex;
    flex-direction: column;
    padding: 1em;

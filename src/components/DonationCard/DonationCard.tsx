@@ -9,17 +9,18 @@ interface DonationCardProps {
    onShowMore: () => void;
 }
 
-const getButtonClassNames = (progress: number) => {
-   return `${styles.donationCardButton} ${
-      progress < 33 ? styles.low : progress < 67 ? styles.med : styles.high
-   }`;
-};
+const getProgressClassNameByProgress = (progress: number) =>
+   progress < 33
+      ? styles.progressLow
+      : progress < 67
+        ? styles.progressMedium
+        : styles.progressHigh;
 
-const getDonationCardProgressClassNames = (progress: number) => {
-   return `${styles.donationCardProgress} ${
-      progress < 33 ? styles.low : progress < 67 ? styles.med : styles.high
-   }`;
-};
+const getButtonClassNames = (progress: number) =>
+   `${styles.button} ${getProgressClassNameByProgress(progress)}`;
+
+const getDonationCardProgressClassNames = (progress: number) =>
+   `${styles.progress} ${getProgressClassNameByProgress(progress)}`;
 
 function DonationCard({
    title,
@@ -33,32 +34,32 @@ function DonationCard({
 
    return (
       <article className={styles.donationCard}>
-         <section className={styles.donationCardImage}>
+         <section className={styles.image}>
             <img
                src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
                alt=""
             />
          </section>
-         <section className={styles.donationCardContent}>
-            <header className={styles.donationCardHeader}>
-               <h2 className={styles.donationCardTitle}>{title}</h2>
+         <section className={styles.content}>
+            <header className={styles.header}>
+               <h2 className={styles.title}>{title}</h2>
                <button className={getButtonClassNames(progress)}>
                   Donate Now
                </button>
             </header>
             {isOpen ? (
                <section
-                  className={`${styles.donationCardDescription} ${styles.open}`}>
+                  className={`${styles.description} ${styles.open}`}>
                   {description}
                </section>
             ) : (
-               <section className={`${styles.donationCardDescription}`}>
+               <section className={`${styles.description}`}>
                   {description}
                </section>
             )}
             <footer>
-               <section className={styles.donationCardTargetInfo}>
-                  <div className={styles.donationCardProgressBar}>
+               <section className={styles.targetInfo}>
+                  <div className={styles.progressBar}>
                      <div
                         className={getDonationCardProgressClassNames(progress)}
                         style={{
@@ -68,12 +69,12 @@ function DonationCard({
                         {progress.toFixed(0)}%
                      </div>
                   </div>
-                  <p className={styles.donationCardDonationTarget}>
+                  <p className={styles.donationTarget}>
                      ${donationTarget.toLocaleString()}
                   </p>
                </section>
                <button
-                  className={styles.donationCardButton}
+                  className={styles.button}
                   onClick={onShowMore}>
                   {isOpen ? 'Show Less' : 'Show More'}
                </button>
