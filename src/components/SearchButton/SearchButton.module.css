@@ -1,0 +1,16 @@
+.searchButton {
+   display: flex;
+   align-items: center;
+   gap: 0.5em;
+}
+
+.searchInput {
+   padding: 0.5em;
+   padding-left: 1em;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+}
+.searchIcon {
+   color: #888;
+   cursor: pointer;
+}

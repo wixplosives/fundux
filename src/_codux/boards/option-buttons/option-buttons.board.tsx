@@ -3,6 +3,7 @@ import styles from './option-buttons.board.module.css';
 import OptionButtons from '../../../components/OptionButtons';
 import SortByButton from '../../../components/SortByButton';
 import FiltersButton from '../../../components/FiltersButton';
+import SearchButton from '../../../components/SearchButton';
 
 export default createBoard({
    name: 'OptionButtons',
@@ -13,14 +14,7 @@ export default createBoard({
                <SortByButton />
                <FiltersButton />
             </div>
-            <div className={styles.donationCardsRightButton}>
-               <input
-                  type="text"
-                  placeholder="Search..."
-                  className={styles.donationCardsSearchInput}
-               />
-               <i className={`fas fa-search ${styles.searchIcon}`}></i>
-            </div>
+            <SearchButton />
          </OptionButtons>
       </div>
    ),
