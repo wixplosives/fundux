@@ -2,10 +2,6 @@ import { useState, useEffect } from 'react';
 import styles from './DonationCards.module.css';
 import DonationCard from '../DonationCard';
 import cards, { DonationCardData } from '../../data/cards';
-import OptionButtons from '../OptionButtons';
-import SortByButton from '../SortByButton';
-import FiltersButton from '../FiltersButton';
-import SearchButton from '../SearchButton/SearchButton';
 
 function DonationCards() {
    const [openCardId, setOpenCardId] = useState(-1);
@@ -16,20 +12,7 @@ function DonationCards() {
    }, []);
 
    return (
-      <main className={styles.donationCards}>
-         <header className={styles.header}>
-            <h1 className={styles.title}>
-               Discover Our <br />
-               Partners in Impact
-            </h1>
-         </header>
-         <section className={styles.optionsButtonsBar}>
-            <OptionButtons>
-               <SortByButton />
-               <FiltersButton />
-               <SearchButton />
-            </OptionButtons>
-         </section>
+      <section className={styles.donationCards}>
          {donationCards.map(({ id, title, description, donationTarget }) => (
             <DonationCard
                key={id}
@@ -41,7 +24,7 @@ function DonationCards() {
                onShowMore={() => setOpenCardId(openCardId !== id ? id : -1)}
             />
          ))}
-      </main>
+      </section>
    );
 }
 
