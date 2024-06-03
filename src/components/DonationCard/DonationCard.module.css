@@ -1,114 +1,98 @@
-.card {
-   border: 1px solid #ccc;
-   border-radius: 20px;
-   padding: 2rem;
-   margin-bottom: 1.5rem;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-   transition: all 0.2s ease-in-out;
+@import '../../styles/variables.css';
+
+.donationCard {
+   margin-bottom: 1.5em;
+   padding: 2em;
+   background-color: var(--bg-primary);
+   border: 1px solid var(--border-color);
+   border-radius: 0.7em;
+   box-shadow: 0 2px 5px var(--shadow-color);
    cursor: pointer;
-   background-color: #e9ecef;
-   font-family: Roboto;
+   transition: all 0.2s ease-in-out;
 }
 
-.card:hover {
+.donationCard:hover {
    transform: translateY(-5px);
-   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   box-shadow: 0 4px 10px var(--shadow-color-hover);
 }
 
 .header {
-   user-select: none;
    display: flex;
    justify-content: space-between;
-   flex-wrap: wrap;
+   align-items: center;
+   user-select: none;
 }
 
-h2 {
-   color: #333;
-   margin-top: 0;
+.title {
+   color: var(--title-color);
 }
 
-.footer {
-   display: flex;
-   flex-direction: column;
+.button {
+   padding: 0.625em 1.25em;
+   border: none;
+   border-radius: 0.7em;
+   background-color: var(--button-bg-color);
+   color: white;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.button:hover {
+   background-color: var(--button-bg-color-hover);
+}
+
+.description {
+   width: 60%;
+   color: var(--description-color);
+   line-height: 2;
 }
 
 .targetInfo {
    display: flex;
-   justify-content: space-between;
+   flex-wrap: nowrap;
    align-items: center;
-   flex-wrap: wrap;
 }
 
 .progressBar {
    width: 90%;
-   background-color: #ccc;
-   border-radius: 10px;
-   display: flex;
-   align-items: center;
+   background-color: var(--border-color);
+   border-radius: 0.7em;
 }
 
 .progress {
-   min-width: 2%;
-   height: 100%;
    color: white;
-   border: 4px solid #ccc;
-   border-radius: 10px;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   box-sizing: border-box;
+   text-align: center;
+   border: 4px solid var(--border-color);
+   border-radius: 0.7em;
 }
 
-.btn {
-   padding: 10px 20px;
-   border: none;
-   border-radius: 10px;
-   background-color: #4dabf7;
-   color: rgb(255, 255, 255);
-   cursor: pointer;
-   transition: background-color 0.3s ease;
-   align-self: flex-start;
-}
-
-.btn:hover {
-   background-color: #228be6;
-}
-
-.targetAmount {
-   font-size: 1.5em;
-   color: #34495e;
+.target {
+   min-width: 10%;
+   font-size: 1.5rem;
+   color: var(--target-color);
    text-align: right;
-   width: 10%;
-   min-width: 5em;
 }
 
-.content {
-   width: 60%;
-   font-family: 'Roboto', sans-serif;
-   color: #2c3e50;
-   line-height: 2;
+.progressLow {
+   background-color: var(--progress-low);
 }
 
-.low {
-   background-color: #f08c00;
+.progressLow:hover {
+   background-color: var(--progress-low-hover);
 }
 
-.low:hover {
-   background-color: #e8590c;
+.progressMedium {
+   background-color: var(--progress-medium);
 }
 
-.med {
-   background-color: #ffd43b;
+.progressMedium:hover {
+   background-color: var(--progress-medium-hover);
 }
 
-.med:hover {
-   background-color: #fab005;
+.progressHigh {
+   background-color: var(--progress-high);
 }
 
-.high {
-   background-color: #69db7c;
-}
-
-.high:hover {
-   background-color: #40c057;
+.progressHigh:hover {
+   background-color: var(--progress-high-hover);
 }
