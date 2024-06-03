@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react';
 import styles from './DonationCard.module.css';
 
 interface DonationCardProps {
@@ -22,6 +23,11 @@ const getButtonClassNames = (progress: number) =>
 const getDonationCardProgressClassNames = (progress: number) =>
    `${styles.progress} ${getProgressClassNameByProgress(progress)}`;
 
+const getDescriptionClassNames = (isOpen: boolean, isOverflowing: boolean) =>
+   `${styles.description} ${isOverflowing ? styles.fade : ''} ${
+      isOpen ? styles.open : ''
+   }`;
+
 function DonationCard({
    title,
    description,
@@ -30,7 +36,31 @@ function DonationCard({
    isOpen,
    onShowMore,
 }: DonationCardProps) {
+   const descriptionRef = useRef<HTMLDivElement>(null);
+   const contentRef = useRef<HTMLDivElement>(null);
+   const [maxHeight, setMaxHeight] = useState<number | null>(null);
+   const [isOverflowing, setIsOverflowing] = useState(false);
+
    const progress = (amount / donationTarget) * 100;
+
+   useEffect(() => {
+      if (descriptionRef.current && contentRef.current) {
+         const maxHeight =
+            contentRef.current!.clientHeight -
+            descriptionRef.current!.clientHeight +
+            descriptionRef.current!.scrollHeight;
+         isOpen ? setMaxHeight(maxHeight) : setMaxHeight(null);
+      }
+   }, [isOpen]);
+
+   useEffect(() => {
+      if (descriptionRef.current) {
+         setIsOverflowing(
+            descriptionRef.current.scrollHeight >
+               descriptionRef.current.clientHeight
+         );
+      }
+   }, []);
 
    return (
       <article className={styles.donationCard}>
@@ -40,32 +70,27 @@ function DonationCard({
                alt=""
             />
          </section>
-         <section className={styles.content}>
+         <section
+            ref={contentRef}
+            style={maxHeight ? { maxHeight } : undefined}
+            className={styles.content}>
             <header className={styles.header}>
                <h2 className={styles.title}>{title}</h2>
                <button className={getButtonClassNames(progress)}>
                   Donate Now
                </button>
             </header>
-            {isOpen ? (
-               <section
-                  className={`${styles.description} ${styles.open}`}>
-                  {description}
-               </section>
-            ) : (
-               <section className={`${styles.description}`}>
-                  {description}
-               </section>
-            )}
-            <footer>
+            <section
+               ref={descriptionRef}
+               className={getDescriptionClassNames(isOpen, isOverflowing)}>
+               {description}
+            </section>
+            <footer className={styles.footer}>
                <section className={styles.targetInfo}>
                   <div className={styles.progressBar}>
                      <div
                         className={getDonationCardProgressClassNames(progress)}
-                        style={{
-                           width: `${progress}%`,
-                           pointerEvents: 'none',
-                        }}>
+                        style={{ width: `${progress}%` }}>
                         {progress.toFixed(0)}%
                      </div>
                   </div>
@@ -73,11 +98,11 @@ function DonationCard({
                      ${donationTarget.toLocaleString()}
                   </p>
                </section>
-               <button
-                  className={styles.button}
-                  onClick={onShowMore}>
-                  {isOpen ? 'Show Less' : 'Show More'}
-               </button>
+               {isOverflowing && (
+                  <button className={styles.button} onClick={onShowMore}>
+                     {isOpen ? 'Show Less' : 'Show More'}
+                  </button>
+               )}
             </footer>
          </section>
       </article>

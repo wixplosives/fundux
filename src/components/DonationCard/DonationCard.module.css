@@ -2,21 +2,44 @@
 
 .donationCard {
    width: 70%;
-   max-width: 70%;
-   margin-bottom: 1.5em;
-   background-color: #fff;
-   color: #333;
-   border: 1px solid #ccc;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-   font-family: Roboto, sans-serif;
-   transition: all 0.2s ease-in-out;
    display: grid;
    grid-template-columns: 1fr 2fr;
-   border-radius: 5px;
+   font-family: Roboto, sans-serif;
+   color: #333;
+   border: 1px solid #ccc;
+   border-radius: 0.3em;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+   transition: all 0.2s ease-in-out;
 }
 .donationCard:hover {
    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
    color: black;
+}
+.image {
+   width: 100%;
+   height: 20em;
+   opacity: 0.5;
+   border: 2px solid white;
+   border-radius: 0.325em;
+   box-sizing: border-box;
+   transition: opacity 0.2s ease-in;
+}
+.image img {
+   width: 100%;
+   height: 100%;
+   border-radius: 0.3em;
+}
+.donationCard:hover .image {
+   opacity: 1;
+}
+.content {
+   max-height: 20em;
+   display: flex;
+   flex-direction: column;
+   row-gap: 1em;
+   padding: 1em;
+   box-sizing: border-box;
+   transition: max-height 0.2s ease-in-out;
 }
 .header {
    display: flex;
@@ -25,41 +48,41 @@
    user-select: none;
 }
 .title {
-   font-size: 2em;
+   font-size: 2rem;
 }
 .button {
-   padding: 0.625em 1.25em;
-   background-color: white;
+   padding: 0.6em 1.2em;
    border: 1px solid #333;
    border-radius: 0.7em;
+   background-color: white;
    cursor: pointer;
-   transition: background-color 0.3s ease;
+   transition: background-color 0.2s ease-in-out;
 }
 .button:hover {
-   background-color: #333;
    color: white;
+   background-color: #333;
 }
 .description {
-   position: relative;
    width: 80%;
-   height: 100px;
    overflow: hidden;
+   position: relative;
    line-height: 2;
 }
-.description::after {
+.description.fade::after {
    content: '';
+   width: 100%;
+   height: 5em;
    position: absolute;
    bottom: 0;
    right: 0;
-   width: 100%;
-   height: 5em;
    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
-}
-.description.open {
-   height: auto;
+   transition: opacity 0.2s ease-in-out;
 }
 .description.open::after {
-   background: none;
+   opacity: 0;
+}
+.footer {
+   margin-top: auto;
 }
 .targetInfo {
    display: flex;
@@ -70,63 +93,40 @@
 }
 .progressBar {
    width: 80%;
-   background-color: #aaa;
-   border-radius: 0.2em;
    border: 1px solid #333;
+   border-radius: 0.3em;
+   background-color: #aaa;
 }
 .progress {
    color: white;
    text-align: center;
-   border-radius: 0.2em;
+   border-radius: 0.3em;
+   pointer-events: none;
 }
 .donationTarget {
-   min-width: 10%;
-   font-size: 1.5em;
-   text-align: right;
+   font-size: 1.5rem;
 }
 .progressLow {
-   background-color: var(--progress-low);
    border: none;
+   background-color: var(--progress-low);
 }
 .progressLow:hover {
-   background-color: var(--progress-low-hover);
    color: white;
+   background-color: var(--progress-low-hover);
 }
 .progressMedium {
-   background-color: var(--progress-medium);
    border: none;
+   background-color: var(--progress-medium);
 }
 .progressMedium:hover {
+   color: white;
    background-color: var(--progress-medium-hover);
 }
 .progressHigh {
-   background-color: var(--progress-high);
    border: none;
+   background-color: var(--progress-high);
 }
 .progressHigh:hover {
-   background-color: var(--progress-high-hover);
    color: white;
-}
-.image {
-   max-height: 300px;
-   opacity: 0.5;
-   border: 2px solid white;
-   border-radius: 5px;
-   box-sizing: border-box;
-   transition: opacity 0.3s ease-in-out;
-   overflow: hidden;
-}
-.image img {
-   width: 100%;
-   height: 300px;
-   border-radius: 5px;
-}
-.donationCard:hover .image {
-   opacity: 1;
-}
-.content {
-   display: flex;
-   flex-direction: column;
-   padding: 1em;
-   justify-content: space-between;
+   background-color: var(--progress-high-hover);
 }

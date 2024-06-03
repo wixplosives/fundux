@@ -7,7 +7,7 @@ import DonationCards from '../DonationCards';
 
 function Main() {
    return (
-      <main>
+      <main className={styles.main}>
          <header className={styles.header}>
             <h1 className={styles.title}>
                Discover Our <br />

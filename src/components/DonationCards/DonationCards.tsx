@@ -13,13 +13,13 @@ function DonationCards() {
 
    return (
       <section className={styles.donationCards}>
-         {donationCards.map(({ id, title, description, donationTarget }) => (
+         {donationCards.map(({ id, title, description, donationTarget, amount }) => (
             <DonationCard
                key={id}
                title={title}
                description={description}
                donationTarget={donationTarget}
-               amount={Math.random() * donationTarget}
+               amount={amount}
                isOpen={openCardId === id}
                onShowMore={() => setOpenCardId(openCardId !== id ? id : -1)}
             />
