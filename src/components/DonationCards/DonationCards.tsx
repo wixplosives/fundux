@@ -4,6 +4,7 @@ import DonationCard from '../DonationCard';
 import cards, { DonationCardData } from '../../data/cards';
 
 function DonationCards() {
+   const [openCardId, setOpenCardId] = useState(-1);
    const [donationCards, setDonationCards] = useState<DonationCardData[]>([]);
 
    useEffect(() => {
@@ -12,12 +13,15 @@ function DonationCards() {
 
    return (
       <main className={styles.donationCards}>
-         {donationCards.map((donationCard) => (
+         {donationCards.map(({ id, title, description, donationTarget }) => (
             <DonationCard
-               key={donationCard.id}
-               title={donationCard.title}
-               description={donationCard.description}
-               donationTarget={donationCard.donationTarget}
+               key={id}
+               title={title}
+               description={description}
+               donationTarget={donationTarget}
+               amount={Math.random() * donationTarget}
+               isOpen={openCardId === id}
+               onShowMore={() => setOpenCardId(openCardId !== id ? id : -1)}
             />
          ))}
       </main>
