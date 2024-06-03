@@ -14,6 +14,7 @@ export default createBoard({
          amount={Math.random() * donationTarget}
          isOpen={false}
          onShowMore={() => null}
+         onShowModal={() => null}
       />
    ),
    isSnippet: true,

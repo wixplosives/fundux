@@ -40,12 +40,15 @@ function DonationCardModal({
             <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
                <div className={styles.modalHeaderContent}>
                   <h2>{title}</h2>
-                  <button className={styles.xButton} onClick={onCloseModal}>
+                  <button
+                     type="button"
+                     className={styles.xButton}
+                     onClick={onCloseModal}>
                      &times;
                   </button>
                </div>
             </header>
-            <section className={styles.sectionContent}>
+            <main className={styles.sectionContent}>
                <div className={styles.formGroup}>
                   <label htmlFor="amount">Select Donation Amount</label>
                   <input
@@ -64,11 +67,11 @@ function DonationCardModal({
                <button type="submit" className={`${styles.submitButton}`}>
                   Donate Now
                </button>
-            </section>
+            </main>
             <footer className={`${styles.modalBoundary} ${styles.modalFooter}`}>
                <div className={styles.modalFooterContent}>
                   <button
-                     type="submit"
+                     type="button"
                      className={`${styles.submitButton} ${styles.cancel}`}
                      onClick={onCloseModal}>
                      Cancel
