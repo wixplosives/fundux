@@ -15,9 +15,4 @@ export default createBoard({
          onCloseModal={() => null}
       />
    ),
-   isSnippet: true,
-   environmentProps: {
-      canvasWidth: 1398,
-      canvasHeight: 892,
-   },
 });
