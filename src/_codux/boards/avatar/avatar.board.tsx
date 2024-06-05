@@ -3,6 +3,6 @@ import Avatar from '../../../components/Avatar/Avatar';
 
 export default createBoard({
    name: 'Avatar',
-   Board: () => <Avatar onLogOut={() => null} />,
+   Board: () => <Avatar onLogOut={() => null} userId={1}/>,
    isSnippet: true,
 });
