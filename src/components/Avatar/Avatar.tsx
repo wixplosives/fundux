@@ -23,11 +23,20 @@ function Avatar({ onLogOut, userId }: AvatarProps) {
       loadUser();
    }, [userId]);
 
-   const handleOnClick = () => {
+   useEffect(() => {
+      const loadUser = async () => {
+         const user = await fetchUserById(userId);
+         setUser(user);
+      };
+
+      loadUser();
+   }, [userId]);
+
+   const handleClick = () => {
       setIsOpen(!isOpen);
    };
 
-   const handleOnClose = () => {
+   const handleClose = () => {
       setIsOpen(false);
    };
 
@@ -51,17 +60,17 @@ function Avatar({ onLogOut, userId }: AvatarProps) {
       : 'NL';
 
    return (
-      <div className={styles.avatar}>
+      <div>
          <button
             ref={anchorRef}
             className={styles.avatarButton}
-            onClick={handleOnClick}
+            onClick={handleClick}
             style={avatarStyle}>
             {avatarStyle ? undefined : initials}
          </button>
          {isOpen && (
             <Menu
-               onClose={handleOnClose}
+               onClose={handleClose}
                onLogOut={onLogOut}
                anchorRect={anchorRect}
                user={user}

@@ -14,7 +14,7 @@ function Menu({ onClose, onLogOut, anchorRect, user }: MenuProps) {
 
    const top = anchorRect.bottom + 10;
    const right = window.innerWidth - anchorRect.right;
-   const handleOnClose = (event: React.MouseEvent<HTMLDivElement>) => {
+   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
       if (event.target === event.currentTarget) {
          onClose();
       }
@@ -22,7 +22,7 @@ function Menu({ onClose, onLogOut, anchorRect, user }: MenuProps) {
 
    return ReactDOM.createPortal(
       <>
-         <div className={styles.menuModal} onClick={handleOnClose}></div>
+         <div className={styles.menuModal} onClick={handleClick}></div>
          <div
             className={styles.menu}
             style={{

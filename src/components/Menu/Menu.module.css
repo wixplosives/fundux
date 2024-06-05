@@ -1,40 +1,36 @@
 .menu {
-   background-color: white;
-   border: 1px solid rgba(0, 0, 0, 0.2);
-   border-radius: 0.7em;
-   font-family: Roboto;
    width: 12em;
    height: 12em;
+   border: 1px solid rgba(0, 0, 0, 0.2);
+   border-radius: 0.7em;
+   background-color: white;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .menu h4 {
    height: 3em;
-   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-   text-align: center;
-   color: black;
-   font-weight: 500;
-   margin: 0;
    display: flex;
    justify-content: center;
    align-items: center;
+   margin: 0;
+   font-weight: 500;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .menuList {
-   list-style-type: none;
    height: 9em;
-   margin: 0;
    display: flex;
    flex-direction: column;
-   align-items: left;
+   margin: 0;
+   list-style-type: none;
 }
 
 .menuItem {
    height: 100%;
    display: flex;
    align-items: center;
-   font-weight: 300;
    padding-left: 1em;
+   font-weight: 300;
    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
    transition: background-color 0.2s;
 }
@@ -49,10 +45,10 @@
 }
 
 .menuModal {
+   width: 100vw;
+   height: 100vh;
    position: fixed;
    left: 0;
    top: 0;
-   height: 100%;
-   width: 100%;
    background-color: rgba(0, 0, 0, 0.2);
 }
