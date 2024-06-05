@@ -1,0 +1,9 @@
+.filters {
+   width: 25%;
+   height: 4em;
+}
+
+.selected {
+   font-weight: bold;
+   background-color: #e0e0e0;
+}
