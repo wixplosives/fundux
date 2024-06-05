@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import commonOptionButtonStyles from '../../common/commonOptionButton.module.css';
 import styles from './SortByButton.module.css';
 
 const sortOptions: string[] = ['Newest', 'Oldest', 'A-Z', 'Z-A'];
@@ -19,16 +20,18 @@ function SortByButton() {
    return (
       <div className={styles.sortByButton}>
          <button
-            className={`${styles.button} ${isOpen ? styles.open : null}`}
+            className={`${commonOptionButtonStyles.button} ${
+               isOpen ? commonOptionButtonStyles.open : null
+            }`}
             onClick={toggleIsOpen}>
             Sort By: {selectedOption} {isOpen ? '▲' : '▼'}
          </button>
          {isOpen && (
-            <ul className={styles.optionsList}>
+            <ul className={commonOptionButtonStyles.optionsList}>
                {sortOptions.map((option) => (
                   <li
                      key={option}
-                     className={styles.optionItem}
+                     className={commonOptionButtonStyles.optionItem}
                      onClick={() => handleSelectedOption(option)}>
                      {option}
                   </li>
