@@ -23,7 +23,7 @@ function Avatar({ onLogOut }: AvatarProps) {
       : null;
 
    return (
-      <div className={styles.avatar}>
+      <div>
          <button
             ref={anchorRef}
             className={styles.avatarButton}

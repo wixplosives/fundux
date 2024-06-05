@@ -1,32 +1,18 @@
-.avatar {
-   width: 4em;
-}
-
 .avatarButton {
-   background-color: #a5d8ff;
-   color: white;
-   font-family: Roboto;
    font-size: 1rem;
-   max-height: 4em;
-   min-height: 4em;
-   max-width: 4em;
-   min-width: 4em;
-   border-radius: 50%;
+   color: white;
+   height: 4em;
+   width: 4em;
    border: 1px solid #aaa;
+   border-radius: 50%;
+   background-color: #a5d8ff;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-   display: flex;
-   justify-content: center;
-   align-items: center;
    cursor: pointer;
    transition: all 0.2s ease-in-out;
 }
 
 .avatarButton:hover {
-   background-color: #4dabf7;
    border: 1px solid #555;
+   background-color: #4dabf7;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.menu {
-   align-self: flex-start;
 }
