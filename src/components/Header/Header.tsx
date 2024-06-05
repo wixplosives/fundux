@@ -8,7 +8,7 @@ import Avatar from '../Avatar';
 function Header() {
    const [isLogedIn, setIsLogedIn] = useState(true);
 
-   const handleOnLogOut = () => {
+   const handleLogOut = () => {
       setIsLogedIn(!isLogedIn);
    };
 
@@ -17,7 +17,7 @@ function Header() {
          <Logo />
          <NavBar />
          {isLogedIn ? (
-            <Avatar onLogOut={handleOnLogOut} userId="2" />
+            <Avatar onLogOut={handleLogOut} userId={2} />
          ) : (
             <LogIn />
          )}

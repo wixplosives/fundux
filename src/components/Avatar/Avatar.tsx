@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './Avatar.module.css';
 import Menu from '../Menu';
-import { fetchUserById, User } from '../../utils';
+import { fetchUserById } from '../../utils';
+import { User } from '../../data/users';
 
 interface AvatarProps {
    onLogOut: () => void;
-   userId: string;
+   userId: number;
 }
 
 function Avatar({ onLogOut, userId }: AvatarProps) {
