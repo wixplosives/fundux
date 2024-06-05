@@ -1,10 +1,10 @@
 import styles from '../../common/commonAuthModals.module.css';
 
 interface SignUpModalProps {
-   switchMode: () => void;
+   onSwitchMode: () => void;
 }
 
-function SignUpModal({ switchMode }: SignUpModalProps) {
+function SignUpModal({ onSwitchMode }: SignUpModalProps) {
    return (
       <form className={styles.modalContent}>
          <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
@@ -67,7 +67,7 @@ function SignUpModal({ switchMode }: SignUpModalProps) {
                </button>
                <p className={styles.signUp}>
                   Already have an account?{' '}
-                  <button onClick={switchMode} className={styles.linkButton}>
+                  <button onClick={onSwitchMode} className={styles.linkButton}>
                      Log in
                   </button>
                </p>

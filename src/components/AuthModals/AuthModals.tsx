@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import styles from './AuthModals.module.css';
 import LogInModal from '../LogInModal';
 import SignUpModal from '../SignUpModal';
-import styles from './AuthModals.module.css';
 
 interface AuthModalsProps {
    onCloseModal: () => void;
@@ -16,18 +16,18 @@ function AuthModals({ onCloseModal }: AuthModalsProps) {
       return () => setMode(newMode);
    };
 
-   const handleOnClick = (event: React.MouseEvent<HTMLDivElement>) => {
+   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
       if (event.target === event.currentTarget) {
          onCloseModal();
       }
    };
 
    return (
-      <div className={styles.modal} onClick={handleOnClick}>
+      <div className={styles.modal} onClick={handleClick}>
          {mode === 'login' ? (
-            <LogInModal switchMode={handleSwitchMode('signup')} />
+            <LogInModal onSwitchMode={handleSwitchMode('signup')} />
          ) : (
-            <SignUpModal switchMode={handleSwitchMode('login')} />
+            <SignUpModal onSwitchMode={handleSwitchMode('login')} />
          )}
       </div>
    );
