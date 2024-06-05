@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import styles from './DonationCardModal.module.css';
 
 interface DonationCardModalProps {
