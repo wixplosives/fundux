@@ -8,11 +8,11 @@ import LogInModal from '../LogInModal';
 function Header() {
    const [isModalVisible, setIsModalVisible] = useState(false);
 
-   const handleLoginOnClick = () => {
+   const handleLoginClick = () => {
       setIsModalVisible(true);
    };
 
-   const handleOnCloseModal = () => {
+   const handleCloseModal = () => {
       setIsModalVisible(false);
    };
 
@@ -20,8 +20,8 @@ function Header() {
       <header className={styles.header}>
          <Logo />
          <NavBar />
-         <LogIn onClick={handleLoginOnClick} />
-         {isModalVisible && <LogInModal onCloseModal={handleOnCloseModal} />}
+         <LogIn onClick={handleLoginClick} />
+         {isModalVisible && <LogInModal onCloseModal={handleCloseModal} />}
       </header>
    );
 }
