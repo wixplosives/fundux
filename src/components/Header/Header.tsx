@@ -12,7 +12,7 @@ function Header() {
       setIsModalVisible(true);
    };
 
-   const handleCloseModal = () => {
+   const handleOnCloseModal = () => {
       setIsModalVisible(false);
    };
 
@@ -21,7 +21,7 @@ function Header() {
          <Logo />
          <NavBar />
          <LogIn onClick={handleLoginOnClick} />
-         {isModalVisible && <LogInModal onCloseModal={handleCloseModal} />}
+         {isModalVisible && <LogInModal onCloseModal={handleOnCloseModal} />}
       </header>
    );
 }
