@@ -10,11 +10,11 @@ function Avatar({ onLogOut }: AvatarProps) {
    const [isOpen, setIsOpen] = useState(false);
    const anchorRef = useRef<HTMLButtonElement>(null);
 
-   const handleOnClick = () => {
+   const handleClick = () => {
       setIsOpen(!isOpen);
    };
 
-   const handleOnClose = () => {
+   const handleClose = () => {
       setIsOpen(false);
    };
 
@@ -27,12 +27,12 @@ function Avatar({ onLogOut }: AvatarProps) {
          <button
             ref={anchorRef}
             className={styles.avatarButton}
-            onClick={handleOnClick}>
+            onClick={handleClick}>
             JD
          </button>
          {isOpen && (
             <Menu
-               onClose={handleOnClose}
+               onClose={handleClose}
                onLogOut={onLogOut}
                anchorRect={anchorRect}
             />
