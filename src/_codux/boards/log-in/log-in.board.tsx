@@ -3,6 +3,6 @@ import LogIn from '../../../components/LogIn/LogIn';
 
 export default createBoard({
    name: 'LogIn',
-   Board: () => <LogIn handleOnClick={() => null} />,
+   Board: () => <LogIn onClick={() => null} />,
    isSnippet: true,
 });
