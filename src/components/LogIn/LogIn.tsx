@@ -1,13 +1,13 @@
 import styles from './LogIn.module.css';
 
 interface LogInProps {
-   onLoginClick: () => void;
+   handleOnClick: () => void;
 }
 
-function LogIn({ onLoginClick }: LogInProps) {
+function LogIn({ handleOnClick }: LogInProps) {
    return (
       <div className={styles.logIn}>
-         <button className={styles.logInButton} onClick={onLoginClick}>
+         <button className={styles.logInButton} onClick={handleOnClick}>
             Log In
          </button>
       </div>
