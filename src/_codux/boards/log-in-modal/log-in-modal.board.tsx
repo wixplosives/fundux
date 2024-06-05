@@ -3,6 +3,6 @@ import LogInModal from '../../../components/LogInModal/LogInModal';
 
 export default createBoard({
    name: 'LogInModal',
-   Board: () => <LogInModal />,
+   Board: () => <LogInModal onCloseModal={() => null} />,
    isSnippet: true,
 });

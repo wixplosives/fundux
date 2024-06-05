@@ -6,16 +6,14 @@ interface LogInModalProps {
 }
 
 function LogInModal({ onCloseModal }: LogInModalProps) {
-   const handleBackgroundOnClick = (
-      event: React.MouseEvent<HTMLDivElement>
-   ) => {
+   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
       if (event.target === event.currentTarget) {
          onCloseModal();
       }
    };
 
    return (
-      <div className={styles.modal} onClick={handleBackgroundOnClick}>
+      <div className={styles.modal} onClick={handleClick}>
          <form className={styles.modalContent}>
             <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
                <div className={styles.modalHeaderContent}>
