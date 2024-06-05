@@ -6,14 +6,14 @@ import LogIn from '../LogIn';
 import LogInModal from '../LogInModal';
 
 function Header() {
-   const [isModalVisible, setModalVisible] = useState(false);
+   const [isModalVisible, setIsModalVisible] = useState(false);
 
    const handleLoginClick = () => {
-      setModalVisible(true);
+      setIsModalVisible(true);
    };
 
    const closeModal = () => {
-      setModalVisible(false);
+      setIsModalVisible(false);
    };
 
    return (
