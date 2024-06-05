@@ -1,0 +1,9 @@
+import { Page } from 'playwright-chromium';
+import { selectors } from '../../test-kit/OptionButtons/selectors';
+import { OptionButtonsDriver } from './optionButtons-driver';
+
+export class FiltersButtonDriver extends OptionButtonsDriver {
+   constructor(page: Page) {
+      super(page, selectors.filtersButton, selectors.filtersButtonDropDownList);
+   }
+}
