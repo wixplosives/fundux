@@ -1,27 +1,20 @@
 import { createBoard } from '@wixc3/react-board';
-import styles from './option-buttons.board.module.css';
 import OptionButtons from '../../../components/OptionButtons';
 import SortByButton from '../../../components/SortByButton';
 import FiltersButton from '../../../components/FiltersButton';
 import SearchButton from '../../../components/SearchButton';
+import OptionButtons_board_module from './option-buttons.board.module.scss';
 
 export default createBoard({
    name: 'OptionButtons',
    Board: () => (
-      <div className={styles.donationCardsOptionsButtonsBar}>
+      <div className={OptionButtons_board_module.optionButtonsWrapper}>
          <OptionButtons>
-            <div className={styles.donationCardLeftButtons}>
-               <SortByButton />
-               <FiltersButton />
-            </div>
+            <SortByButton />
+            <FiltersButton />
             <SearchButton />
          </OptionButtons>
       </div>
    ),
    isSnippet: true,
-   environmentProps: {
-      canvasWidth: 1024,
-      canvasHeight: 768,
-      windowWidth: 1024,
-   },
 });
