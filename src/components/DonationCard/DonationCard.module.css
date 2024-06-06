@@ -4,7 +4,6 @@
    width: 70%;
    display: grid;
    grid-template-columns: 1fr 2fr;
-   font-family: Roboto, sans-serif;
    color: #333;
    border: 1px solid #ccc;
    border-radius: 0.3em;
@@ -18,10 +17,10 @@
 .image {
    width: 100%;
    height: 20em;
-   opacity: 0.5;
    border: 2px solid white;
    border-radius: 0.325em;
    box-sizing: border-box;
+   opacity: 0.5;
    transition: opacity 0.2s ease-in;
 }
 .image img {
