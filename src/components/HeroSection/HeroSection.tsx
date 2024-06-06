@@ -3,7 +3,7 @@ import styles from './HeroSection.module.css';
 function HeroSection() {
    return (
       <section className={styles.heroSection}>
-         <article className={styles.heroSectionText}>
+         <article className={styles.text}>
             <h1>Transform Lives <br/> with a Single Gesture</h1>
             <p>
                Every donation lights up a path to a brighter future. <br />
