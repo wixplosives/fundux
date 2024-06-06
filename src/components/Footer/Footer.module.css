@@ -1,11 +1,11 @@
 .footer {
    height: 20vh;
-   font-family: Roboto;
-   color: white;
-   text-align: center;
    display: flex;
    flex-direction: column;
    justify-content: center;
-   border-top: 1px solid #868e96;
-   background-color: #ced4da;
+   font-weight: 300;
+   color: var(--title-color);
+   text-align: center;
+   border-top: 1px solid var(--border-color);
+   background-color: var(--bg-primary);
 }
