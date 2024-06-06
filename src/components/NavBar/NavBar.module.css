@@ -1,25 +1,22 @@
 .navBar {
+   width: 100%;
    display: flex;
    justify-content: end;
-   width: 100%;
    padding: 2em;
 }
-
 .navList {
+   width: 50%;
    display: flex;
    justify-content: end;
    gap: 5em;
-   width: 50%;
    list-style-type: none;
 }
-
 .navItem {
-   cursor: pointer;
-   font-family: 'Roboto', sans-serif;
+   font-family: Roboto, sans-serif;
    font-weight: 300;
+   cursor: pointer;
    transition: color 0.2s ease-in-out;
 }
-
 .navItem:hover {
    color: #868e96;
 }
