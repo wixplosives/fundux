@@ -1,9 +1,11 @@
-import styles from './HowItWorks.module.css';
+import commonIntroSectionStyles from '../../common/commonIntroSection.module.css';
 
 function HowItWorks() {
    return (
-      <section className={styles.howItWorks}>
-         <h1>How It Works</h1>
+      <section className={commonIntroSectionStyles.section}>
+         <article className={commonIntroSectionStyles.text}>
+            <h1>How It Works</h1>
+         </article>
       </section>
    );
 }

@@ -1,9 +1,11 @@
-import styles from './Contact.module.css';
+import commonIntroSectionStyles from '../../common/commonIntroSection.module.css';
 
 function Contact() {
    return (
-      <section className={styles.contact}>
-         <h1>Contact Us</h1>
+      <section className={commonIntroSectionStyles.section}>
+         <article className={commonIntroSectionStyles.text}>
+            <h1>Contact Us</h1>
+         </article>
       </section>
    );
 }
