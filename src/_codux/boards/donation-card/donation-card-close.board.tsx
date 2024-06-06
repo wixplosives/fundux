@@ -2,22 +2,23 @@ import { createBoard } from '@wixc3/react-board';
 import DonationCard from '../../../components/DonationCard';
 import cards, { DonationCardData } from '../../../data/cards';
 
-const { title, description, donationTarget}: DonationCardData = cards[0];
+const donationCard: DonationCardData = cards[0];
 
 export default createBoard({
    name: 'DonationCard - Closed',
    Board: () => (
       <DonationCard
-         title={title}
-         description={description}
-         donationTarget={donationTarget}
-         amount={Math.random() * donationTarget}
+         title={donationCard.title}
+         description={donationCard.description}
+         donationTarget={donationCard.donationTarget}
+         amount={Math.random() * donationCard.donationTarget}
          isOpen={false}
          onShowMore={() => null}
       />
    ),
    isSnippet: true,
    environmentProps: {
-      canvasWidth: 1024,
+      windowWidth: 1024,
+      windowHeight: 768,
    },
 });
