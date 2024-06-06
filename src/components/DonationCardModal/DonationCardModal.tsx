@@ -38,15 +38,13 @@ function DonationCardModal({
       <div className={styles.modal} onClick={handleBackgroundClick}>
          <form className={styles.modalContent} onSubmit={handleFormSubmit}>
             <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
-               <div className={styles.modalHeaderContent}>
-                  <h2>{title}</h2>
-                  <button
-                     type="button"
-                     className={styles.xButton}
-                     onClick={onCloseModal}>
-                     &times;
-                  </button>
-               </div>
+               <h2>{title}</h2>
+               <button
+                  type="button"
+                  className={styles.xButton}
+                  onClick={onCloseModal}>
+                  &times;
+               </button>
             </header>
             <main className={styles.sectionContent}>
                <div className={styles.formGroup}>
@@ -61,7 +59,7 @@ function DonationCardModal({
                      onChange={handleAmountChange}
                   />
                   <span className={styles.amount}>
-                     {donationAmount + amount} / {target} $
+                     {donationAmount} / {target - amount} $
                   </span>
                </div>
                <button type="submit" className={`${styles.submitButton}`}>
@@ -69,14 +67,12 @@ function DonationCardModal({
                </button>
             </main>
             <footer className={`${styles.modalBoundary} ${styles.modalFooter}`}>
-               <div className={styles.modalFooterContent}>
-                  <button
-                     type="button"
-                     className={`${styles.submitButton} ${styles.cancel}`}
-                     onClick={onCloseModal}>
-                     Cancel
-                  </button>
-               </div>
+               <button
+                  type="button"
+                  className={`${styles.submitButton} ${styles.cancel}`}
+                  onClick={onCloseModal}>
+                  Cancel
+               </button>
             </footer>
          </form>
       </div>
