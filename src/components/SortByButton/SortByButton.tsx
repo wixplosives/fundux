@@ -20,9 +20,7 @@ function SortByButton() {
    return (
       <div className={styles.sortByButton}>
          <button
-            className={`${commonOptionButtonStyles.button} ${
-               isOpen ? commonOptionButtonStyles.open : null
-            }`}
+            className={commonOptionButtonStyles.button}
             onClick={toggleIsOpen}>
             Sort By: {isOpen ? '▲' : '▼'}
          </button>
