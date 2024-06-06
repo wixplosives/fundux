@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './DonationCards.module.css';
 import DonationCard from '../DonationCard';
 import DonationCardModal from '../DonationCardModal';
@@ -37,30 +37,32 @@ function DonationCards() {
       }
    };
 
+   const renderedDonationCards: React.JSX.Element[] = donationCards.map(
+      ({ id, title, description, donationTarget, donationAmount }) => (
+         <DonationCard
+            key={id}
+            title={title}
+            description={description}
+            donationTarget={donationTarget}
+            amount={donationAmount}
+            isOpen={openCardId === id}
+            onShowMore={() => setOpenCardId(openCardId !== id ? id : -1)}
+            onShowModal={() =>
+               handleShowModal({
+                  id,
+                  title,
+                  description,
+                  donationTarget,
+                  donationAmount,
+               })
+            }
+         />
+      )
+   );
+
    return (
       <main className={styles.donationCards}>
-         {donationCards.map(
-            ({ id, title, description, donationTarget, donationAmount }) => (
-               <DonationCard
-                  key={id}
-                  title={title}
-                  description={description}
-                  donationTarget={donationTarget}
-                  amount={donationAmount}
-                  isOpen={openCardId === id}
-                  onShowMore={() => setOpenCardId(openCardId !== id ? id : -1)}
-                  onShowModal={() =>
-                     handleShowModal({
-                        id,
-                        title,
-                        description,
-                        donationTarget,
-                        donationAmount,
-                     })
-                  }
-               />
-            )
-         )}
+         {renderedDonationCards}
          {isModalOpen && selectedCard && (
             <DonationCardModal
                title={selectedCard.title}
