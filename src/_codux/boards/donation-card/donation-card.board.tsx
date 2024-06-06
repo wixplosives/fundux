@@ -16,8 +16,5 @@ export default createBoard({
          onShowMore={() => null}
       />
    ),
-   environmentProps: {
-      windowWidth: 1024,
-      windowHeight: 768,
-   },
+   isSnippet: true,
 });
