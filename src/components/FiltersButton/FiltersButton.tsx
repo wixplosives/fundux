@@ -35,7 +35,7 @@ function FiltersButton() {
    const opened = () => (isOpen ? commonOptionButtonStyles.open : '');
 
    const getOptionClassNames = (option: string) =>
-      `${commonOptionButtonStyles.optionItem} ${selected(option)}`;
+      `${commonOptionButtonStyles.button} ${selected(option)}`;
 
    const formatOption = (option: string) => {
       return selectedFilters.includes(option) ? `✓ ${option}` : option;
@@ -51,12 +51,12 @@ function FiltersButton() {
          {isOpen && (
             <ul className={commonOptionButtonStyles.optionsList}>
                {filterOptions.map((option) => (
-                  <li
+                  <button
                      key={option}
                      className={getOptionClassNames(option)}
                      onClick={() => handleFilterClick(option)}>
                      {formatOption(option)}
-                  </li>
+                  </button>
                ))}
             </ul>
          )}

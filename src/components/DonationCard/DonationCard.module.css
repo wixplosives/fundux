@@ -1,98 +1,132 @@
 @import '../../styles/variables.css';
 
 .donationCard {
-   margin-bottom: 1.5em;
-   padding: 2em;
-   background-color: var(--bg-primary);
-   border: 1px solid var(--border-color);
-   border-radius: 0.7em;
-   box-shadow: 0 2px 5px var(--shadow-color);
-   cursor: pointer;
+   width: 70%;
+   display: grid;
+   grid-template-columns: 1fr 2fr;
+   font-family: Roboto, sans-serif;
+   color: #333;
+   border: 1px solid #ccc;
+   border-radius: 0.3em;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
    transition: all 0.2s ease-in-out;
 }
-
 .donationCard:hover {
-   transform: translateY(-5px);
-   box-shadow: 0 4px 10px var(--shadow-color-hover);
+   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+   color: black;
 }
-
+.image {
+   width: 100%;
+   height: 20em;
+   opacity: 0.5;
+   border: 2px solid white;
+   border-radius: 0.325em;
+   box-sizing: border-box;
+   transition: opacity 0.2s ease-in;
+}
+.image img {
+   width: 100%;
+   height: 100%;
+   border-radius: 0.3em;
+}
+.donationCard:hover .image {
+   opacity: 1;
+}
+.content {
+   max-height: 20em;
+   display: flex;
+   flex-direction: column;
+   row-gap: 1em;
+   padding: 1em;
+   box-sizing: border-box;
+   transition: max-height 0.2s ease-in-out;
+}
 .header {
    display: flex;
    justify-content: space-between;
    align-items: center;
    user-select: none;
 }
-
 .title {
-   color: var(--title-color);
+   font-size: 2rem;
 }
-
 .button {
-   padding: 0.625em 1.25em;
-   border: none;
+   padding: 0.6em 1.2em;
+   border: 1px solid #333;
    border-radius: 0.7em;
-   background-color: var(--button-bg-color);
-   color: white;
+   background-color: white;
    cursor: pointer;
-   transition: background-color 0.3s ease;
+   transition: background-color 0.2s ease-in-out;
 }
-
 .button:hover {
-   background-color: var(--button-bg-color-hover);
+   color: white;
+   background-color: #333;
 }
-
 .description {
-   width: 60%;
-   color: var(--description-color);
+   width: 80%;
+   overflow: hidden;
+   position: relative;
    line-height: 2;
 }
-
+.description.fade::after {
+   content: '';
+   width: 100%;
+   height: 5em;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+   transition: opacity 0.2s ease-in-out;
+}
+.description.open::after {
+   opacity: 0;
+}
+.footer {
+   margin-top: auto;
+}
 .targetInfo {
    display: flex;
    flex-wrap: nowrap;
    align-items: center;
+   justify-content: space-between;
+   margin-bottom: 1em;
 }
-
 .progressBar {
-   width: 90%;
-   background-color: var(--border-color);
-   border-radius: 0.7em;
+   width: 80%;
+   border: 1px solid #333;
+   border-radius: 0.3em;
+   background-color: #aaa;
 }
-
 .progress {
    color: white;
    text-align: center;
-   border: 4px solid var(--border-color);
-   border-radius: 0.7em;
+   border-radius: 0.3em;
+   pointer-events: none;
 }
-
-.target {
-   min-width: 10%;
+.donationTarget {
    font-size: 1.5rem;
-   color: var(--target-color);
-   text-align: right;
 }
-
 .progressLow {
+   border: none;
    background-color: var(--progress-low);
 }
-
 .progressLow:hover {
+   color: white;
    background-color: var(--progress-low-hover);
 }
-
 .progressMedium {
+   border: none;
    background-color: var(--progress-medium);
 }
-
 .progressMedium:hover {
+   color: white;
    background-color: var(--progress-medium-hover);
 }
-
 .progressHigh {
+   border: none;
    background-color: var(--progress-high);
 }
-
 .progressHigh:hover {
+   color: white;
    background-color: var(--progress-high-hover);
 }

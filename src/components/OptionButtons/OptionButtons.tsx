@@ -6,7 +6,15 @@ interface OptionButtonsProps {
 }
 
 function OptionButtons({ children }: OptionButtonsProps) {
-   return <div className={styles.optionButtons}>{children}</div>;
+   const childrenArray = React.Children.toArray(children);
+   const leftOptionButtons = childrenArray.slice(0, -1);
+   const rightOptionButton = childrenArray.at(-1);
+   return (
+      <div className={styles.optionButtons}>
+         <div className={styles.leftOptionButtons}>{leftOptionButtons}</div>
+         {rightOptionButton}
+      </div>
+   );
 }
 
 export default OptionButtons;

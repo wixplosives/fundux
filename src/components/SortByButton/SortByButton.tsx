@@ -20,21 +20,19 @@ function SortByButton() {
    return (
       <div className={styles.sortByButton}>
          <button
-            className={`${commonOptionButtonStyles.button} ${
-               isOpen ? commonOptionButtonStyles.open : null
-            }`}
+            className={commonOptionButtonStyles.button}
             onClick={toggleIsOpen}>
-            Sort By: {selectedOption} {isOpen ? '▲' : '▼'}
+            Sort By: {isOpen ? '▲' : '▼'}
          </button>
          {isOpen && (
             <ul className={commonOptionButtonStyles.optionsList}>
                {sortOptions.map((option) => (
-                  <li
+                  <button
                      key={option}
-                     className={commonOptionButtonStyles.optionItem}
+                     className={commonOptionButtonStyles.button}
                      onClick={() => handleSelectedOption(option)}>
                      {option}
-                  </li>
+                  </button>
                ))}
             </ul>
          )}
