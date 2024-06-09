@@ -19,5 +19,5 @@
    transition: color 0.2s ease-in-out;
 }
 .navItem:hover {
-   color: var(--nav-item-color-hover);
+   color: #868e96;
 }
