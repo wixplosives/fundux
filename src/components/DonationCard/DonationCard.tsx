@@ -6,6 +6,7 @@ interface DonationCardProps {
    description: string;
    donationTarget: number;
    amount: number;
+   image: string | undefined;
    isOpen: boolean;
    onShowMore: () => void;
 }
@@ -33,6 +34,7 @@ function DonationCard({
    description,
    donationTarget,
    amount,
+   image,
    isOpen,
    onShowMore,
 }: DonationCardProps) {
@@ -66,7 +68,7 @@ function DonationCard({
       <article className={styles.donationCard}>
          <section className={styles.image}>
             <img
-               src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
+               src={image || "https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"}
                alt=""
             />
          </section>

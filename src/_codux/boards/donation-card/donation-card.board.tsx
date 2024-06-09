@@ -12,12 +12,10 @@ export default createBoard({
          description={description}
          donationTarget={donationTarget}
          amount={Math.random() * donationTarget}
+         image={undefined}
          isOpen={true}
          onShowMore={() => null}
       />
    ),
    isSnippet: true,
-   environmentProps: {
-      canvasWidth: 1024,
-   },
 });

@@ -4,6 +4,7 @@ export interface DonationCardData {
    description: string;
    donationTarget: number;
    amount: number;
+   image?: string;
 }
 
 const cards: DonationCardData[] = [
@@ -24,6 +25,7 @@ const cards: DonationCardData[] = [
              to experience the wonder of these incredible animals in their natural habitats.`,
       donationTarget: 5000000,
       amount: Math.random() * 5000000,
+      image: './images/save-the-whales.webp',
    },
    {
       id: 2,
@@ -43,6 +45,7 @@ const cards: DonationCardData[] = [
              Together, we can build a brighter future for all children, regardless of their socioeconomic background.`,
       donationTarget: 3000000,
       amount: Math.random() * 3000000,
+      image: './images/support-local-education.webp',
    },
    {
       id: 3,
@@ -59,6 +62,7 @@ const cards: DonationCardData[] = [
              more people in need, creating a stronger, healthier community for everyone.`,
       donationTarget: 2000000,
       amount: Math.random() * 2000000,
+      image: './images/feed-the-hungry.webp',
    },
    {
       id: 4,
@@ -68,6 +72,7 @@ const cards: DonationCardData[] = [
              and supporting wildlife. Your donation will help us restore forests and combat climate change.`,
       donationTarget: 10000000,
       amount: Math.random() * 10000000,
+      image: './images/plant-b-trees.webp',
    },
    {
       id: 5,
@@ -77,6 +82,7 @@ const cards: DonationCardData[] = [
              giving animals a second chance at life and finding them loving homes.`,
       donationTarget: 1500000,
       amount: Math.random() * 1500000,
+      image: './images/support-animals-shelter.webp',
    },
 ];
 
