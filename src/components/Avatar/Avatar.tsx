@@ -23,15 +23,6 @@ function Avatar({ onLogOut, userId }: AvatarProps) {
       loadUser();
    }, [userId]);
 
-   useEffect(() => {
-      const loadUser = async () => {
-         const user = await fetchUserById(userId);
-         setUser(user);
-      };
-
-      loadUser();
-   }, [userId]);
-    
    const handleClick = () => {
       setIsOpen(!isOpen);
    };
@@ -60,7 +51,7 @@ function Avatar({ onLogOut, userId }: AvatarProps) {
       : 'NL';
 
    return (
-      <div>
+      <div className={styles.avatar}>
          <button
             ref={anchorRef}
             className={styles.avatarButton}
