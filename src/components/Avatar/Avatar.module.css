@@ -1,0 +1,18 @@
+.avatarButton {
+   width: 4em;
+   height: 4em;
+   font-size: 1rem;
+   color: white;
+   border: 1px solid #aaa;
+   border-radius: 50%;
+   background-color: #a5d8ff;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+}
+
+.avatarButton:hover {
+   border: 1px solid #555;
+   background-color: #4dabf7;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}

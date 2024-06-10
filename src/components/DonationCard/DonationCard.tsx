@@ -7,6 +7,7 @@ interface DonationCardProps {
    amount: number;
    isOpen: boolean;
    onShowMore: () => void;
+   onShowModal: () => void;
 }
 
 const getProgressClassNameByProgress = (progress: number) =>
@@ -29,6 +30,7 @@ function DonationCard({
    amount,
    isOpen,
    onShowMore,
+   onShowModal,
 }: DonationCardProps) {
    const progress = (amount / donationTarget) * 100;
 
@@ -36,8 +38,10 @@ function DonationCard({
       <article className={styles.donationCard} onClick={onShowMore}>
          <header className={styles.header}>
             <h2 className={styles.title}>{title}</h2>
-            <button className={getButtonClassNames(progress)}>
-               Donate Now!
+            <button
+               className={getButtonClassNames(progress)}
+               onClick={onShowModal}>
+               Donate Now
             </button>
          </header>
          {isOpen && (
