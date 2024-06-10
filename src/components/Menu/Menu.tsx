@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom';
 import styles from './Menu.module.css';
-import { User } from '../../utils';
+import { User } from '../../data/users';
 
 interface MenuProps {
    onClose: () => void;
