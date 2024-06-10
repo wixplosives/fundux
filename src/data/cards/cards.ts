@@ -3,6 +3,7 @@ export interface DonationCardData {
    title: string;
    description: string;
    donationTarget: number;
+   donationAmount: number;
 }
 
 const cards: DonationCardData[] = [
@@ -16,6 +17,7 @@ const cards: DonationCardData[] = [
              importance of biodiversity and marine habitats. Your generous support can make a significant difference 
              in preserving these magnificent creatures for future generations.`,
       donationTarget: 5000000,
+      donationAmount: 0,
    },
    {
       id: 2,
@@ -27,6 +29,7 @@ const cards: DonationCardData[] = [
              knowledge to deliver high-quality education. Help us create opportunities for students in need to thrive 
              academically and reach their full potential.`,
       donationTarget: 3000000,
+      donationAmount: 0,
    },
 ];
 

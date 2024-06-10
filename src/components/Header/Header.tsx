@@ -9,7 +9,7 @@ function Header() {
    const [isLogedIn, setIsLogedIn] = useState(true);
 
    const handleLogOut = () => {
-      setIsLogedIn(!isLogedIn);
+      setIsLogedIn(prev => !prev);
    };
 
    return (

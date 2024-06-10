@@ -31,7 +31,7 @@ function Avatar({ onLogOut, userId }: AvatarProps) {
 
       loadUser();
    }, [userId]);
-
+    
    const handleClick = () => {
       setIsOpen(!isOpen);
    };
