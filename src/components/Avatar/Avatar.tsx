@@ -57,7 +57,7 @@ function Avatar({ onLogOut, userId }: AvatarProps) {
             className={styles.avatarButton}
             onClick={handleClick}
             style={avatarStyle}>
-            {avatarStyle ? undefined : initials}
+            {avatarStyle && initials}
          </button>
          {isOpen && (
             <Menu
