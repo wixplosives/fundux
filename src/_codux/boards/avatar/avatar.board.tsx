@@ -1,6 +1,5 @@
 import { createBoard } from '@wixc3/react-board';
 import Avatar from '../../../components/Avatar/Avatar';
-
 import Avatar_board_module from './avatar.board.module.scss';
 
 export default createBoard({
@@ -8,7 +7,7 @@ export default createBoard({
    Board: () => (
       <div className={Avatar_board_module.avatarWrapper}>
          <div id="menu-root"></div>
-         <Avatar onLogOut={() => null} />
+         <Avatar onLogOut={() => null} userId={1}/>
       </div>
    ),
    isSnippet: true,
