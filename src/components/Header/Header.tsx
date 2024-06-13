@@ -26,7 +26,7 @@ function Header() {
          <Logo />
          <NavBar />
          {isLogedIn ? (
-            <Avatar onLogOut={handleLogOut} />
+            <Avatar onLogOut={handleLogOut} userId={2}/>
          ) : (
             <LogIn onClick={handleClick} />
          )}
