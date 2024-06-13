@@ -18,7 +18,12 @@ function LogInModal({ onCloseModal }: LogInModalProps) {
             <header className={`${styles.modalBoundary} ${styles.modalHeader}`}>
                <div className={styles.modalHeaderContent}>
                   <h2>Login to Your Account</h2>
-                  <button className={styles.xButton}>&times;</button>
+                  <button
+                     type="button"
+                     className={styles.xButton}
+                     onClick={() => onCloseModal()}>
+                     &times;
+                  </button>
                </div>
             </header>
             <section className={styles.sectionContent}>
@@ -50,9 +55,9 @@ function LogInModal({ onCloseModal }: LogInModalProps) {
             <footer className={`${styles.modalBoundary} ${styles.modalFooter}`}>
                <div className={styles.modalFooterContent}>
                   <button
-                     type="submit"
+                     type="button"
                      className={`${styles.submitButton} ${styles.cancel}`}
-                     onClick={(e) => e.preventDefault()}>
+                     onClick={() => onCloseModal()}>
                      Cancel
                   </button>
                   <p className={styles.signUp}>
