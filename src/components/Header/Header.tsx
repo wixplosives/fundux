@@ -4,19 +4,35 @@ import Logo from '../Logo';
 import NavBar from '../NavBar';
 import LogIn from '../LogIn';
 import Avatar from '../Avatar';
+import LogInModal from '../LogInModal';
 
 function Header() {
-   const [isLogedIn, setIsLogedIn] = useState(true);
+   const [isLogedIn, setIsLogedIn] = useState(false);
+   const [isModalVisible, setIsModalVisible] = useState(false);
 
    const handleLogOut = () => {
-      setIsLogedIn(prev => !prev);
+      setIsLogedIn((prev) => !prev);
    };
 
+   const handleClick = () => {
+      setIsModalVisible(true);
+   };
+
+   const handleCloseModal = () => {
+      setIsModalVisible(false);
+   };
    return (
       <header className={styles.header}>
          <Logo />
          <NavBar />
-         {isLogedIn ? <Avatar onLogOut={handleLogOut} /> : <LogIn />}
+         {isLogedIn ? (
+            <Avatar onLogOut={handleLogOut} />
+         ) : (
+            <LogIn onClick={handleClick} />
+         )}
+         {isModalVisible && !isLogedIn && (
+            <LogInModal onCloseModal={handleCloseModal} />
+         )}
       </header>
    );
 }
