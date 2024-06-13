@@ -7,7 +7,7 @@ export default createBoard({
    Board: () => (
       <div className={Avatar_board_module.avatarWrapper}>
          <div id="menu-root"></div>
-         <Avatar onLogOut={() => null} />
+         <Avatar onLogOut={() => null} userId={1}/>
       </div>
    ),
    isSnippet: true,

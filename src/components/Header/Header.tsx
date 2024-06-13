@@ -16,7 +16,11 @@ function Header() {
       <header className={styles.header}>
          <Logo />
          <NavBar />
-         {isLogedIn ? <Avatar onLogOut={handleLogOut} /> : <LogIn />}
+         {isLogedIn ? (
+            <Avatar onLogOut={handleLogOut} userId={2} />
+         ) : (
+            <LogIn />
+         )}
       </header>
    );
 }
