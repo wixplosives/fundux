@@ -1,0 +1,11 @@
+.footer {
+   height: 20vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   font-weight: 300;
+   color: var(--title-color);
+   text-align: center;
+   border-top: 1px solid var(--border-color);
+   background-color: var(--bg-primary);
+}

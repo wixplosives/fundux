@@ -3,25 +3,20 @@ import styles from './Header.module.css';
 import Logo from '../Logo';
 import NavBar from '../NavBar';
 import LogIn from '../LogIn';
-import LogInModal from '../LogInModal';
+import Avatar from '../Avatar';
 
 function Header() {
-   const [isModalVisible, setIsModalVisible] = useState(false);
+   const [isLogedIn, setIsLogedIn] = useState(true);
 
-   const handleClick = () => {
-      setIsModalVisible(true);
-   };
-
-   const handleCloseModal = () => {
-      setIsModalVisible(false);
+   const handleLogOut = () => {
+      setIsLogedIn(prev => !prev);
    };
 
    return (
       <header className={styles.header}>
          <Logo />
          <NavBar />
-         <LogIn onClick={handleClick} />
-         {isModalVisible && <LogInModal onCloseModal={handleCloseModal} />}
+         {isLogedIn ? <Avatar onLogOut={handleLogOut} /> : <LogIn />}
       </header>
    );
 }
